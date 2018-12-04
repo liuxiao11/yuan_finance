@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <!-- 指定多核浏览器用webkit模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
+    <link rel="stylesheet" href="css/common.css">
+    <title>远元财务-对账工单创建</title>
+    <link rel="stylesheet" href="css/transfer.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+</head>
+<body>
+<!-- 顶部 -->
+<div class="navbar">
+    <div class='nav-left'><img src="images/LOGO.png" alt=""></div>
+    <div class="nav-right">
+        <span>远元集团财务查询系统</span>
+    </div>
+    <div class="con-right">
+        <font>2018.11.11 18:20:00 &nbsp;&nbsp;&nbsp;欢迎SEVE.829登录系统 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;</font>
+        <a href="login.html">注销</a>
+    </div>
+    <img class="sidebar-top-menu" src="images/xiala.png">
+</div>
+
+<div class="container-box">
+    <!-- 侧边栏 -->
+
+    <div class="sidebar-top">
+        <div class="per-left">
+            <div class="per-info">
+                <img src="images/avatar.png">
+                <div class="per-font">
+                    <p>Seve.829</p>
+                    <span>财务经理</span>
+                </div>
+            </div>
+        </div>
+        <div class="per-border"></div>
+        <div class="per-right">
+            <span>当前账簿</span>
+            <select name="account-book" id="account-book">
+                <option value="1" class="book"> &nbsp;&nbsp;&nbsp;账簿1</option>
+                <option value="2" class="book"> &nbsp;&nbsp;&nbsp;账簿2</option>
+                <option value="3" class="book"> &nbsp;&nbsp;&nbsp;账簿3</option>
+            </select>
+            <a href="" style="display: inline;"><button class="qiehuan">切换</button></a>
+            <a href="edit-password.html" style="display: inline;"><button class="edit-pwd">修改密码</button></a>
+        </div>
+    </div>
+    <div id="sidebar-left" class="sidebar-left">
+        <div class="sidebar-nav">
+            <ul class="sidebar-nav-ul">
+                <li>
+                    <a class="sidebar-list" href="index.html">
+                        <img class="nav-li-icon" src="images/icon/home.png">
+                        <span class="hidden-tablet"> 首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="withdrawals.html">
+                        <img class="nav-li-icon" src="images/icon/tx.png">
+                        <span class="hidden-tablet"> 账户提现</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/fz.png">
+                        <span class="hidden-tablet"> 财务分账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-select.html"><span> 账户查询</span></a></li>
+                        <li><a class="submenu" href="transfer-app.html"><span> 转账申请</span></a></li>
+                        <li><a class="submenu" href="transfer-select.html"><span> 转账查询</span></a></li>
+                        <li><a class="submenu" href="loan.html"><span> 借款查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/dz.png">
+                        <span class="hidden-tablet"> 财务对账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="pos.html"><span > POS入账流水</span></a></li>
+                        <li><a class="submenu" href="income-leading.html"><span > 营收报表导入</span></a></li>
+                        <li><a class="submenu" href="income-select.html"><span > 营收报表查询</span></a></li>
+                        <li><a class="submenu" href="check.html"><span > 营收对账</span></a></li>
+                        <li><a class="submenu" href="check-select.html"><span > 营收对账查询</span></a></li>
+                        <li><a class="submenu" href="work-select.html"><span > 对账工单查询</span></a></li>
+                        <li><a class="submenu" href="work-add.html"><span > 对账工单创建</span></a></li>
+                        <li><a class="submenu" href="total.html"><span > 总账查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/bmgl.png">
+                        <span class="hidden-tablet"> 部门账户管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="department-add.html"><span> 添加部门</span></a></li>
+                        <li><a class="submenu" href="department-control.html"><span> 部门管理</span></a></li>
+                        <li><a class="submenu" href="account.html"><span> 账户管理</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/gjgl.png">
+                        <span class="hidden-tablet"> 高级管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-book.html"><span> 账簿管理</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="container">
+        <div class="container-con" style="">
+            <form action="" id="commentForm">
+                <div class="con-1">
+                    <div class="workcon">
+                        <div class="con-title">
+                            <div class="con-icon"></div>
+                            <span>基础信息</span>
+                        </div>
+                        <div class="con-input">
+                            <p>
+                                <span  class="pwd">对账日</span>
+                                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
+                            </p>
+                            <p>
+                                <span  class="pwd">门店</span>
+                                <select name="" id="">
+                                    <option value="">门店1</option>
+                                    <option value="">门店2</option>
+                                </select>
+                                <button class="diff">查询差额</button>
+                            </p>
+                            <p><span  class="pwd">差额</span><input type="text"  id="diff" value="300" readonly="readonly"></p>
+                            <p>
+                                <span  class="pwd">差额类型</span>
+                                <input type="checkbox" name="names" value="1">延迟入账<input type="checkbox" name="names" value="2">长短帐<input type="checkbox" name="names" value="3">其他
+                            </p>
+                        </div>
+                    </div>
+                    <div class="workcon" id="workcon1" style="display: none">
+                        <div class="con-title">
+                        <div class="con-icon"></div>
+                        <span>延迟入账</span>
+                    </div>
+                        <div class="con-input">
+                            <p><span  class="pwd">延迟入账差额</span><input type="text"   value="100"  data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
+                            <p>
+                                <span  class="pwd">延迟入账日</span>
+                                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
+                            </p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                        </div>
+                    </div>
+                    <div class="workcon" id="workcon2" style="display: none">
+                        <div class="con-title">
+                            <div class="con-icon"></div>
+                            <span>长短帐</span>
+                        </div>
+                        <div class="con-input">
+                            <p><span  class="pwd">长短账差额</span><input type="text"   value="100"  data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
+                            <p>
+                                <span  class="pwd">预计处理日</span>
+                                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
+                            </p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                        </div>
+                    </div>
+                    <div class="workcon" id="workcon3" style="display: none">
+                        <div class="con-title">
+                            <div class="con-icon"></div>
+                            <span>其他</span>
+                        </div>
+                        <div class="con-input">
+                            <p><span  class="pwd">长短帐差额</span><input type="text"   value="100" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" class="save"  value="提交工单" >
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
+<script src="static/js/jquery.form-validator.min.js"></script>
+<script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        $.validate({form: "#commentForm"});
+    });
+
+    $("#commentForm").submit(function (event) {
+
+    });
+    $(function () {
+//        $(this).ready(function () {
+//            $("#workcon1").hide();
+//            $("#workcon2").hide();
+//            $("#workcon3").hide();
+//        })
+        var s = $("input[name='names']");
+        s.each(function(i) {
+            $(this).click(function(){
+                if(this.checked==true){
+                    if(this.value == 1){
+                        $("#workcon1").attr('name','check');
+                       if($("#workcon2").attr('name') == 'check' && $("#workcon3").attr('name') == 'check'){
+                            $("#workcon1").show();
+                            $("#workcon2").show();
+                            $("#workcon3").show();
+                        }else if($("#workcon2").attr('name') != 'check' && $("#workcon3").attr('name') != 'check'){
+                            $("#workcon1").show();
+                            $("#workcon2").hide();
+                            $("#workcon3").hide();
+                        }else{
+                            $("#workcon1").show();
+                        }
+                    }else if(this.value == 2){
+                        $("#workcon2").attr('name','check');
+                        if($("#workcon1").attr('name') != 'check' && $("#workcon3").attr('name') != 'check'){
+                            $("#workcon1").hide();
+                            $("#workcon2").show();
+                            $("#workcon3").hide();
+                        }else if($("#workcon1").attr('name') == 'check' && $("#workcon3").attr('name') == 'check'){
+                            $("#workcon1").show();
+                            $("#workcon2").show();
+                            $("#workcon3").show();
+                        }else{
+                            $("#workcon2").show();
+                        }
+                    }else if(this.value == 3){
+                        $("#workcon3").attr('name','check');
+                        if($("#workcon2").attr('name') != 'check' && $("#workcon1").attr('name') != 'check'){
+                            $("#workcon1").hide();
+                            $("#workcon2").hide();
+                            $("#workcon3").show();
+                        }else if($("#workcon1").attr('name') == 'check' && $("#workcon2").attr('name') == 'check'){
+                            $("#workcon1").show();
+                            $("#workcon2").show();
+                            $("#workcon3").show();
+                        }else{
+                            $("#workcon3").show();
+                        }
+                    }
+                }else{
+                    if(this.value == 1){
+                        $("#workcon1").removeAttr('name');
+                        $("#workcon1").hide();
+                    }else if(this.value == 2){
+                        $("#workcon2").removeAttr('name');
+                        $("#workcon2").hide();
+                    }else if(this.value == 3){
+                        $("#workcon3").removeAttr('name');
+                        $("#workcon3").hide();
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $('.datetimepicker').datetimepicker({
+        lang: "ch",           //语言选择中文
+        format: "Y-m-d",      //格式化日期
+        yearStart: 2017,      //设置最小年份
+        yearEnd: 2020,        //设置最大年份
+        timepicker: false,    //时间选项
+        todayButton: false,    //关闭选择今天按钮
+        validateOnBlur:false   //关闭自动填充
+    });
+</script>

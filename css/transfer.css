@@ -1,0 +1,278 @@
+.container-con {
+    min-height: 530px;
+    background-color: #ffffff;
+    position: relative;
+    width: 73%;
+    left: 40px;
+    top: 40px;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+.con-1{
+    width: 94%;
+    margin: 23px 0 0 42px;
+ }
+.con-1 p .pwd{
+    color: #323232;
+    font-size: 16px;
+    text-align: right;
+    display: inline-block;
+    width: 65px;
+}
+.con-1 .workcon p .pwd{
+    color: #323232;
+    font-size: 16px;
+    text-align: right;
+    display: inline-block;
+    width: 133px;
+}
+.con-1 .pwdtxt{
+    color: #991e36;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.con-1 .con-title{
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+
+}
+
+.con-icon{
+    width: 4px;
+    height: 16px;
+    background-color: #4a79e7;
+    border-radius: 2px;
+    float: left;
+}
+.con-1 .con-title span{
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    color: #323232;
+    float: left;
+    margin-left: 10px;
+}
+.con-1 .con-text{
+    width: 700px;
+    height: 238px;
+    background-color: #f0f3fa;
+    border-radius: 5px;
+    margin-top: 11px;
+}
+.con-1 .con-text p{
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: normal;
+    color: #646464;
+    padding-top: 10px;
+    margin-left: 31px;
+}
+.con-1 .con-text p span{
+    color: #323232;
+}
+.con-1 .con-text p .active{
+    color: #ec5a38;
+}
+.con-1 .con-text .con-p{
+    padding-top: 23px;
+}
+.con-1 .con-input{
+    width: 700px;
+    margin-top: 11px;
+}
+
+.con-1 .con-input p{
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: normal;
+    color: #646464;
+    padding-top: 23px;
+    margin-left: 31px;
+}
+/*.con-1 .con-input p span{*/
+    /*color: #323232;*/
+/*}*/
+
+.con-1 input{
+    width: 200px;
+    height: 42px;
+    color: #646464;
+    font-size: 14px;
+    background-color: #f7f9fd;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin:0 48px 0 20px;
+    padding-left: 10px;
+}
+.con-1 select{
+    width: 200px;
+    height: 42px;
+    background-color: #f0f5ff;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    color: #646464;
+    font-size: 14px;
+    margin:0 48px 0 20px;
+    padding-left: 10px;
+}
+.con-1 input[type="radio"]{
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: solid 1px #e6e6e6;
+    margin-right: 10px;
+    color: #646464;
+    font-size: 14px;
+}
+.con-1 input[type="checkbox"]{
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: solid 1px #e6e6e6;
+    margin-right: 10px;
+    color: #646464;
+    font-size: 14px;
+}
+.con-1 button{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+.con-1 .workcon{
+    margin-bottom: 35px;
+}
+.con-1 textarea{
+    width: 340px;
+    height: 85px;
+    color: #646464;
+    font-size: 14px;
+    background-color: #f7f9fd;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin:0 48px 0 155px;
+    padding-left: 10px;
+}
+
+.con-2{
+    width: 94%;
+    text-align: center;
+    margin: 30px 0 50px 42px;
+}
+.con-2 .con-2-item{
+    margin-bottom: 20px;
+}
+.con-2 .con-title{
+    width: 100%;
+    height: 17px;
+    line-height: 17px;
+
+}
+.con-2 .dep-add{
+    width: 60px;
+    height: 28px;
+    border-radius: 5px;
+    border: solid 1px #4a79e7;
+    color: #4a79ea;
+    font-size: 16px;
+    background: #ffffff;
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+.con-2 a{
+    display: inline-block;
+}
+.con-icon{
+    width: 4px;
+    height: 16px;
+    background-color: #4a79e7;
+    border-radius: 2px;
+    float: left;
+}
+.con-2 .con-title span{
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 16px;
+    font-weight: normal;
+    color: #323232;
+    float: left;
+    margin-left: 10px;
+}
+.con-2 .con-table{
+    width: 100%;
+}
+.con-2 .con-table table{
+    color: #323232;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #f6f8fc;
+    margin-top: 10px;
+}
+.con-2 .con-table table tr th{
+    background-color: #e9eef9;
+    height: 60px;
+}
+.con-2 .con-table table tr{
+    border: 1px solid #ffffff;
+    height: 40px;
+}
+.con-2 .con-table table tr:hover{
+    background-color: #ffffff;
+    box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
+}
+.con-2 .con-table table button{
+    width: 60px;
+    height: 28px;
+    border-radius: 5px;
+    border: solid 1px #4a79e7;
+    color: #4a79ea;
+    font-size: 16px;
+    background: #ffffff;
+    margin-right: 10px;
+}
+.con-2 .con-page{
+    width: 100%;
+    height: 30px;
+    color: #646464;
+    font-size: 14px;
+    margin-top: 35px;
+}
+.con-2 .con-page .show-page{
+    width: 71px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: solid 1px #e6e6e6;
+    margin-left: 20px;
+}
+.save{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 10px 0 50px 480px;
+}
+.save1{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 40px 0 0 200px;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远元财务-登陆页面</title>
+</head>
+<style>
+    body{width:100%;max-width:1920px;min-width: 1920px;background:#f5f5f5}
+    .login-pop{width: 900px;height: 500px;background-color: #ffffff;box-shadow: 0px 8px 29px 0px rgba(178, 199, 248, 0.4);border-radius: 10px;position: absolute;top: 0;left: 0;right: 0;bottom: 0; margin: auto;}
+    .login-input{width: 320px;height:500px;float: left}
+    .login-input .logo-img{margin:50px 0 0 50px}
+
+    .login-input input {
+        width: 183px;
+        height: 42px;
+        border-radius: 5px;
+        border: solid 1px #e6e6e6;
+        ont-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        padding-left: 37px;
+    }
+
+    .login-input select {
+        width: 220px;
+        height: 42px;
+        border-radius: 5px;
+        border: solid 1px #e6e6e6;
+        ont-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        color: #757575;
+    }
+
+    .login-input span {
+        color: #323232;
+        font-size: 14px;
+    }
+
+    .login-input .form-error {
+        color: #d9222c;
+        font-size: 6px;
+    }
+
+    .login-input .input-icon {
+        position: relative;
+        width: 236px;
+        margin-top: 40px;
+        margin-left: 50px
+    }
+
+    .login-input #icon-user {
+        position: absolute;
+        left: 13px;
+        top: unset;
+        z-index: 5;
+        background-image: url(images/icon/yonghu.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .login-input #icon-pwd {
+        position: absolute;
+        left: 11px;
+        top: unset;
+        z-index: 5;
+        background-image: url(images/icon/lock.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        width: 16px;
+        height: 16px;
+    }
+    .login-input .login-check{margin-top: -8px}
+
+    .k {
+        margin-bottom: 10px;
+        line-height: 42px
+    }
+    .login-input .login-check input {width: 14px;height: 14px;border-radius: 3px;border: solid 1px #e6e6e6;}
+    .login-input .input-icon .login-check span{color: #323232;font-size: 14px;}
+
+    .login-input .input-icon .login-submit {
+        width: 220px;
+        height: 42px;
+        background-color: #4a79e7;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #ffffff;
+        padding-right: 37px;
+        margin-top: 8px
+    }
+    .login-img{width: 580px;height:500px;float: left;background: url(images/login.png)}
+
+    .a {
+        margin-top: 15px
+    }
+</style>
+<body>
+    <div class="login-pop">
+        <div class="login-input">
+            <img src="images/login-LOGO.png" class="logo-img">
+
+            <form action="" method="post" id="commentForm" onsubmit="return check()">
+                <div class="input-icon">
+                    <div class="k">
+                        <i id="icon-user" class="a"></i>
+                        <input type="text" placeholder="请输入用户名" id="name" class="name"
+                               data-validation="length alphanumeric" data-validation-length="3-20"
+                               data-validation-error-msg="用户名必须为4至20个字符">
+                        <span id="nametxt" class="txt"></span>
+                    </div>
+                    <div class="k">
+                        <i id="icon-pwd" class="a"></i>
+                        <input type="password" placeholder="请输入密码" id="pwd" class="pwd">
+                        <span id="pwdtxt" class="txt"></span>
+                    </div>
+                    <div class="k">
+                        <select name="account-book" id="account-book">
+                            <option value="0" selected> &nbsp;&nbsp;&nbsp;账簿选择</option>
+                            <option value="1" class="book"> &nbsp;&nbsp;&nbsp;账簿1</option>
+                            <option value="2" class="book"> &nbsp;&nbsp;&nbsp;账簿2</option>
+                            <option value="3" class="book"> &nbsp;&nbsp;&nbsp;账簿3</option>
+                        </select>
+                    </div>
+                    <div class="login-check">
+                        <input type="checkbox" value="" > <span>下次自动登陆</span>
+                    </div>
+                    <input type="submit" value="登录" class="login-submit">
+                    <span id="subtxt" class="txt"></span>
+                </div>
+            </form>
+        </div>
+        <div class="login-img">
+        </div>
+    </div>
+</body>
+</html>
+<script src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.form-validator.min.js"></script>
+<script>
+    //    $.validator.setDefaults({
+    //        submitHandler: function(form) {
+    //            alert("提交事件!");
+    //            form.submit();
+    //        }
+    //    });
+    //    $().ready(function() {
+    //        $("#commentForm").validate({
+    //            rules: {
+    //                name: {
+    //                    required: true,
+    //                    minlength: 2
+    //                },
+    //                pwd: {
+    //                    required: true,
+    //                    minlength: 8
+    //                }
+    //            },
+    //            messages: {
+    //                name: {
+    //                    required: "请输入用户名",
+    //                    minlength: "用户名必需由两个字母组成"
+    //                },
+    //                pwd: {
+    //                    required: "请输入密码",
+    //                    minlength: "密码长度不能小于 8 个字母"
+    //                }
+    //            }
+    //        });
+    //
+    //    });
+
+    $(document).ready(function () {
+        $.validate({form: '#commentForm'});
+    });
+
+
+
+    function check() {
+        if (AccountName() && password1() && isChecked()) {
+            return true;
+        }else{
+            $("#subtxt").html('请检查您的用户名密码及是否选择账簿');
+            return false;
+        }
+    }
+    //验证不为空
+    function isEmptyOrBlank(str) {
+        if (str == null || str.length == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    //验证用户名
+    // function AccountName() {
+    //     var $accN = $("#name").val();
+    //     if (!isEmptyOrBlank($accN)) {
+    //         var $accRegular = /^[a-zA-Z]{1}\w{3,15}$/;
+    //         if (!$accRegular.test($accN)) {
+    //             return false;
+    //         } else {
+    //             return true;
+    //         }
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+    //验证密码
+    function password1() {
+        var $password = $("#pwd").val();
+        if (!isEmptyOrBlank($password)) {
+            var $passRegular = /^\w{8,12}$/;
+            if (!$passRegular.test($password)) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    //验证账簿选中
+    function isChecked() {
+        if ($("#account-book").val() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // $("#name").blur(function(){//用户名文本框失去焦点触发验证事件
+    //     if (!AccountName()) {
+    //         $('#nametxt').show();
+    //         $("#nametxt").html('用户名由4~16位英文字母开头+数字组成')
+    //     } else {
+    //         $('#nametxt').hide();
+    //     }
+    // });
+    $("#pwd").blur(function(){//用户密码框失去焦点触发验证事件
+        if (!password1()) {
+            $('#pwdtxt').show();
+            $("#pwdtxt").html('密码由8-12位英文字母和数字组成的')
+        } else {
+            $('#pwdtxt').hide();
+        }
+    });
+
+</script>

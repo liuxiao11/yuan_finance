@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <!-- 指定多核浏览器用webkit模式 -->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
+    <link rel="stylesheet" href="css/common.css">
+    <title>远元财务-转账申请</title>
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" type="text/css" href="css/paging.css">
+</head>
+<body>
+<!-- 顶部 -->
+<div class="navbar">
+    <div class='nav-left'><img src="images/LOGO.png" alt=""></div>
+    <div class="nav-right">
+        <span>远元集团财务查询系统</span>
+    </div>
+    <div class="con-right">
+        <font>2018.11.11 18:20:00 &nbsp;&nbsp;&nbsp;欢迎SEVE.829登录系统 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;</font>
+        <a href="login.html">注销</a>
+    </div>
+    <img class="sidebar-top-menu" src="images/xiala.png">
+</div>
+
+<div class="container-box">
+    <!-- 侧边栏 -->
+
+    <div class="sidebar-top">
+        <div class="per-left">
+            <div class="per-info">
+                <img src="images/avatar.png">
+                <div class="per-font">
+                    <p>Seve.829</p>
+                    <span>财务经理</span>
+                </div>
+            </div>
+        </div>
+        <div class="per-border"></div>
+        <div class="per-right">
+            <span>当前账簿</span>
+            <select name="account-book" id="account-book">
+                <option value="1" class="book"> &nbsp;&nbsp;&nbsp;账簿1</option>
+                <option value="2" class="book"> &nbsp;&nbsp;&nbsp;账簿2</option>
+                <option value="3" class="book"> &nbsp;&nbsp;&nbsp;账簿3</option>
+            </select>
+            <a href="" style="display: inline;">
+                <button class="qiehuan">切换</button>
+            </a>
+            <a href="edit-password.html" style="display: inline;">
+                <button class="edit-pwd">修改密码</button>
+            </a>
+        </div>
+    </div>
+    <div id="sidebar-left" class="sidebar-left">
+        <div class="sidebar-nav">
+            <ul class="sidebar-nav-ul">
+                <li>
+                    <a class="sidebar-list" href="index.html">
+                        <img class="nav-li-icon" src="images/icon/home.png">
+                        <span class="hidden-tablet"> 首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="withdrawals.html">
+                        <img class="nav-li-icon" src="images/icon/tx.png">
+                        <span class="hidden-tablet"> 账户提现</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/fz.png">
+                        <span class="hidden-tablet"> 财务分账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-select.html"><span> 账户查询</span></a></li>
+                        <li><a class="submenu" href="transfer-app.html"><span> 转账申请</span></a></li>
+                        <li><a class="submenu" href="transfer-select.html"><span> 转账查询</span></a></li>
+                        <li><a class="submenu" href="loan.html"><span> 借款查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/dz.png">
+                        <span class="hidden-tablet"> 财务对账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="pos.html"><span> POS入账流水</span></a></li>
+                        <li><a class="submenu" href="income-leading.html"><span> 营收报表导入</span></a></li>
+                        <li><a class="submenu" href="income-select.html"><span> 营收报表查询</span></a></li>
+                        <li><a class="submenu" href="check.html"><span> 营收对账</span></a></li>
+                        <li><a class="submenu" href="check-select.html"><span> 营收对账查询</span></a></li>
+                        <li><a class="submenu" href="work-select.html"><span> 对账工单查询</span></a></li>
+                        <li><a class="submenu" href="work-add.html"><span> 对账工单创建</span></a></li>
+                        <li><a class="submenu" href="total.html"><span> 总账查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/bmgl.png">
+                        <span class="hidden-tablet"> 部门账户管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="department-add.html"><span> 添加部门</span></a></li>
+                        <li><a class="submenu" href="department-control.html"><span> 部门管理</span></a></li>
+                        <li><a class="submenu" href="account.html"><span> 账户管理</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/gjgl.png">
+                        <span class="hidden-tablet"> 高级管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-book.html"><span> 账簿管理</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="container">
+        <div class="container-con">
+            <div class="con-button">
+                <button class="wds">转账申请</button>
+                <button class="wds-re">批量转账申请</button>
+            </div>
+            <div class="box1">
+                <form action="" id="commentForm">
+                    <div class="con-1">
+                        <p>
+                            <span class="pwd">转出账户</span>
+                            <select name="" id="">
+                                <option value="">资金归集户A</option>
+                                <option value="">资金归集户B</option>
+                            </select>
+                        </p>
+                        <p>
+                            <span class="pwd">转入账户</span>
+                            <select name="" id="">
+                                <option value="">分公司001</option>
+                                <option value="">分公司002</option>
+                            </select>
+                        </p>
+                        <p><span class="pwd">账户余额</span><input type="text" value="10000.00" readonly="readonly"></p>
+                        <p><span class="pwd">转账金额</span><input type="text" placeholder="请输入提现金额（元）" id="wds" class="wds" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([1]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="转账金额必须大于一元且保留两位小数"></p>
+                        <p>
+                            <span class="pwd">用途</span>
+                            <select name="" id="">
+                                <option value="">分账</option>
+                                <option value="">分账</option>
+                            </select>
+                        </p>
+                        <p><span class="pwd">附言</span><input type="text" placeholder="" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="附言最多50个字"></p>
+                        <input type="submit" class="button" value="提交" id="user-submit">
+
+                    </div>
+                </form>
+            </div>
+            <div class="box2" style="display: none">
+                <div class="con-2">
+                    <div class="con-table">
+                        <div class="con-file">
+                            <span class="tra-file">账单文件：</span><a href="javascript:;" class="file gradient">选择文件<input
+                                type="file" id="excel-file"></a>
+                            <button class="jiexi">解析</button>
+                        </div>
+
+                        <table class="exceltable">
+                            <thead class="tablehead"></thead>
+                            <tbody class="tablebody"></tbody>
+                        </table>
+                    </div>
+                    <div class="con-page">
+                        <!--<span>每页显示条数</span>-->
+                        <!--<select name="" id="" class="show-page">-->
+                        <!--<option value="">5</option>-->
+                        <!--<option value="">6</option>-->
+                        <!--<option value="">7</option>-->
+                        <!--</select>-->
+                        <div id="pageToolbar"></div>
+                    </div>
+                    <button>确认提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
+<script type="text/javascript" src="static/js/query.js"></script>
+<script type="text/javascript" src="static/js/paging.js"></script>
+<script type="text/javascript" src="static/js/xlsx.core.min.js"></script>
+<script src="static/js/jquery.form-validator.min.js"></script>
+<script>
+    $(function () {
+        $('.box2').ready(function () {
+            $('.box2').css('display', 'none');
+        });
+        $('.wds').click(function () {
+            $('.box1').css('display', 'block');
+            $('.box2').css('display', 'none');
+        });
+        $('.wds-re').click(function () {
+            $('.box1').css('display', 'none');
+            $('.box2').css('display', 'block');
+        })
+    })
+    $(function () {
+        $.validate({form: "#commentForm"});
+    });
+
+    $("#commentForm").submit(function (event) {
+
+    });
+</script>
+<script type="text/javascript">
+    $('#excel-file').change(function (e) {
+        var files = e.target.files;
+        var location = files[0].name;
+
+        var point = location.lastIndexOf(".");
+        var type = location.substr(point);
+        if(type == ".xlsx" || type == ".xls"){
+            var fileReader = new FileReader();
+            fileReader.onload = function (ev) {
+                try {
+                    var data = ev.target.result,
+                        workbook = XLSX.read(data, {
+                            type: 'binary'
+                        }), // 以二进制流方式读取得到整份excel表格对象
+                        persons = []; // 存储获取到的数据
+                } catch (e) {
+                    alert('文件类型不正确');
+                    console.log('文件类型不正确');
+                    return false;
+                }
+
+                // 表格的表格范围，可用于判断表头是否数量是否正确
+                var fromTo = '';
+                // 遍历每张表读取
+                for (var sheet in workbook.Sheets) {
+                    if (workbook.Sheets.hasOwnProperty(sheet)) {
+                        fromTo = workbook.Sheets[sheet]['!ref'];
+                        //console.log(fromTo);
+                        persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+                        // break; // 如果只取第一张表，就取消注释这行
+                    }
+                }
+                //console.log(persons);
+                var pagesize = 10;
+                var count1 = persons.length;//总数据的条数
+                /*分页*/
+                $('#pageToolbar').Paging({pagesize:pagesize,count:count1,toolbar:false,callback:function(page,size,count){
+                    alert('当前第 ' +page +'页,每页 '+size+'条,总页数：'+count+'页');
+                    //清空表格
+                        $(".tablehead").html("");
+                        $(".tablebody").html("");
+                        var offset = (page-1)*size;
+                        for (var j = offset-1; j < size+offset-1; j++) {
+                            var arr = persons[j+1];
+                            //console.log(arr)
+                            if (j == offset-1) {
+                                $(".tablehead").append("<tr class='exceltitle'></tr>");
+                            }
+                            $(".tablebody").append("<tr class='excelcontent'></tr>");
+                            for (var i in arr) {
+                                //console.log(i+"---"+arr[i]);
+                                if (j == offset-1) {
+                                    $(".exceltitle").append("<th>" + i + "</th>");
+                                }
+                                $(".excelcontent").eq((j+1)%size).append("<td>" + arr[i] + "</td>");
+                            }
+                        }
+                        $(".exceltitle").append("<th>检查</th>");
+                        $(".excelcontent").append("<td></td>");
+                    }
+
+                });
+
+                //清空表格
+                $(".tablehead").html("");
+                $(".tablebody").html("");
+                //首页显示 只有一页
+                if(count1 <= 10){
+                    for (var j = 0; j < persons.length; j++) {
+                        var arr = persons[j];
+                        if (j == 0) {
+                            $(".tablehead").append("<tr class='exceltitle'></tr>");
+                        }
+                        $(".tablebody").append("<tr class='excelcontent'></tr>");
+                        for (var i in arr) {
+                            //alert(i+"---"+arr[i]);
+                            if (j == 0) {
+                                $(".exceltitle").append("<th>" + i + "</th>");
+                            }
+                            $(".excelcontent").eq(j).append("<td>" + arr[i] + "</td>");
+                        }
+                    }
+                }else{
+                    for (var j = 0; j < 10; j++) {
+                        var arr = persons[j];
+                        if (j == 0) {
+                            $(".tablehead").append("<tr class='exceltitle'></tr>");
+                        }
+                        $(".tablebody").append("<tr class='excelcontent'></tr>");
+                        for (var i in arr) {
+                            //alert(i+"---"+arr[i]);
+                            if (j == 0) {
+                                $(".exceltitle").append("<th>" + i + "</th>");
+                            }
+                            $(".excelcontent").eq(j).append("<td>" + arr[i] + "</td>");
+                        }
+                    }
+                }
+                $(".exceltitle").append("<th>检查</th>");
+                $(".excelcontent").append("<td></td>");
+
+            };
+            // 以二进制方式打开文件
+            fileReader.readAsBinaryString(files[0]);
+        }else{
+            alert('文件类型不正确')
+        }
+    });
+</script>
+

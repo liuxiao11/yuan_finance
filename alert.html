@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远元财务-弹窗</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="navbar">
+    <div class='nav-left'><img src="images/LOGO.png" alt=""></div>
+    <div class="nav-right">
+        <span>远元集团财务查询系统</span>
+    </div>
+    <div class="con-right">
+        <font>2018.11.11 18:20:00 &nbsp;&nbsp;&nbsp;欢迎SEVE.829登录系统 &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;</font>
+        <a href="login.html">注销</a>
+    </div>
+    <img class="sidebar-top-menu" src="images/xiala.png">
+</div>
+
+<div class="container-box">
+    <!-- 侧边栏 -->
+
+    <div class="sidebar-top">
+        <div class="per-left">
+            <div class="per-info">
+                <img src="images/avatar.png">
+                <div class="per-font">
+                    <p>Seve.829</p>
+                    <span>财务经理</span>
+                </div>
+            </div>
+        </div>
+        <div class="per-border"></div>
+        <div class="per-right">
+            <span>当前账簿</span>
+            <select name="account-book" id="account-book">
+                <option value="1" class="book"> &nbsp;&nbsp;&nbsp;账簿1</option>
+                <option value="2" class="book"> &nbsp;&nbsp;&nbsp;账簿2</option>
+                <option value="3" class="book"> &nbsp;&nbsp;&nbsp;账簿3</option>
+            </select>
+            <a href="" style="display: inline;"><button class="qiehuan">切换</button></a>
+            <a href="edit-password.html" style="display: inline;"><button class="edit-pwd">修改密码</button></a>
+        </div>
+    </div>
+    <div id="sidebar-left" class="sidebar-left">
+        <div class="sidebar-nav">
+            <ul class="sidebar-nav-ul">
+                <li>
+                    <a class="sidebar-list" href="index.html">
+                        <img class="nav-li-icon" src="images/icon/home.png">
+                        <span class="hidden-tablet"> 首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="withdrawals.html">
+                        <img class="nav-li-icon" src="images/icon/tx.png">
+                        <span class="hidden-tablet"> 账户提现</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/fz.png">
+                        <span class="hidden-tablet"> 财务分账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-select.html"><span> 账户查询</span></a></li>
+                        <li><a class="submenu" href="transfer-app.html"><span> 转账申请</span></a></li>
+                        <li><a class="submenu" href="transfer.html"><span> 转账查询</span></a></li>
+                        <li><a class="submenu" href="loan.html"><span> 借款查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/dz.png">
+                        <span class="hidden-tablet"> 财务对账 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="pos.html"><span > POS入账流水</span></a></li>
+                        <li><a class="submenu" href="income-leading.html"><span > 营收报表导入</span></a></li>
+                        <li><a class="submenu" href="income-select.html"><span > 营收报表查询</span></a></li>
+                        <li><a class="submenu" href="check.html"><span > 营收对账</span></a></li>
+                        <li><a class="submenu" href="check-select.html"><span > 营收对账查询</span></a></li>
+                        <li><a class="submenu" href="total.html"><span > 总账查询</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/bmgl.png">
+                        <span class="hidden-tablet"> 部门账户管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="department-add.html"><span> 添加部门</span></a></li>
+                        <li><a class="submenu" href="department-control.html"><span> 部门管理</span></a></li>
+                        <li><a class="submenu" href="account.html"><span> 账户管理</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="sidebar-list" href="javascript:void(0)">
+                        <img class="nav-li-icon" src="images/icon/gjgl.png">
+                        <span class="hidden-tablet"> 高级管理 <img class="nav-sj" src="images/icon/jt.png"></span>
+                    </a>
+                    <ul class="child-nav-item">
+                        <li><a class="submenu" href="account-book.html"><span> 账簿管理</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="container">
+
+    </div>
+</div>
+<!--成功弹窗-->
+<div class="popAlertSucc">
+    <div class="popAlertBox" style="display: none">
+        <div class="popSuccess">
+            <div class="success">
+                <img src="images/wancheng.png" alt="">
+                <p>恭喜你，发送成功！</p>
+                <span>×××分公司的对账工单已发送，需要确认。</span>
+                <button class="popview">查看</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--失败弹窗-->
+<div class="popAlertFail">
+    <div class="popAlertBox"  style="display: block">
+        <div class="popFail">
+            <div class="fail">
+                <img src="images/cuowu.png" alt="">
+                <p>抱歉，信息错误！</p>
+                <span>您的信息出现错误，请 <a href="">点击刷新</a>！</span>
+                <button class="popback">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--是否删除信息弹窗-->
+<div class="popAlertDel"  style="display: none">
+    <div class="popAlertBox">
+        <div class="popIs">
+            <div class="is">
+                <p>是否删除该信息？</p>
+                <span>删除后不可以恢复</span>
+                <br>
+                <button class="cancel">取消</button>
+                <button class="delete">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="static/js/common.js"></script>
