@@ -175,7 +175,6 @@
 
 }
 .con-2 .dep-add{
-    width: 60px;
     height: 28px;
     border-radius: 5px;
     border: solid 1px #4a79e7;
@@ -228,7 +227,6 @@
     box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
 }
 .con-2 .con-table table button{
-    width: 60px;
     height: 28px;
     border-radius: 5px;
     border: solid 1px #4a79e7;
