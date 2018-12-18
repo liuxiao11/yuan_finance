@@ -10,7 +10,7 @@
 
     <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
     <link rel="stylesheet" href="css/common.css">
-    <title>远元财务-对账工单创建</title>
+    <title>远元财务-对账工单创建新</title>
     <link rel="stylesheet" href="css/transfer.css">
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 </head>
@@ -132,64 +132,58 @@
                         <div class="con-input">
                             <p>
                                 <span  class="pwd">对账日</span>
-                                <input class="form-control datetimepicker" autocomplete="off" type="text" size="20" value="" name="start" placeholder=""/>
+                                <input  type="text" size="20" value="2018-11-30" name="start" placeholder="" disabled/>
                             </p>
                             <p>
                                 <span  class="pwd">门店</span>
-                                <select name="" id="">
+                                <select name="" id="" disabled>
                                     <option value="">门店1</option>
-                                    <option value="">门店2</option>
                                 </select>
-                                <button class="diff">查询差额</button>
                             </p>
                             <p><span  class="pwd">差额</span>
-                                <input type="text"  id="diff" value="300" readonly="readonly">
+                                <input type="text"  id="diff" value="300" disabled>
                             </p>
-                            <p>
-                                <span  class="pwd">差额类型</span>
-                                <input type="checkbox" name="names" value="1">延迟入账<input type="checkbox" name="names" value="2">长短帐<input type="checkbox" name="names" value="3">其他
-                            </p>
+
                         </div>
                     </div>
-                    <div class="workcon" id="workcon1" style="display: none">
+                    <div class="workcon" id="workcon1" >
                         <div class="con-title">
                         <div class="con-icon"></div>
                         <span>延迟入账</span>
                     </div>
                         <div class="con-input">
-                            <p><span  class="pwd">延迟入账差额</span><input type="text"   value="100"  data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
+                            <p><span  class="pwd">延迟入账差额</span><input type="text"   value="100" disabled><span  class="pwd">(不参与平账计算)</span></p>
                             <p>
-                                <span  class="pwd">延迟入账日</span><input class="form-control datetimepicker" autocomplete="off"  type="text" size="20" value="" name="start" />
+                                <span  class="pwd">延迟入账日</span><input   type="text" value="2018-11-30" disabled/>
                             </p>
-                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" disabled></textarea></p>
                         </div>
                     </div>
-                    <div class="workcon" id="workcon2" style="display: none">
+                    <div class="workcon" id="workcon2" >
                         <div class="con-title">
                             <div class="con-icon"></div>
                             <span>长短帐</span>
                         </div>
                         <div class="con-input">
-                            <p><span  class="pwd">长短账差额</span><input type="text" value="100"  data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
+                            <p><span  class="pwd">长短账差额</span><input type="text" value="100" disabled><span  class="pwd">(不参与平账计算)</span></p>
                             <p>
-                                <span  class="pwd">预计处理日</span><input class="form-control datetimepicker" autocomplete="off" type="text" size="20" value="" name="start" placeholder=""/>
+                                <span  class="pwd">预计处理日</span><input  type="text"  value="2018-11-30" disabled/>
                             </p>
-                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" disabled></textarea></p>
                         </div>
                     </div>
-                    <div class="workcon" id="workcon3" style="display: none">
+                    <div class="workcon" id="workcon3" >
                         <div class="con-title">
                             <div class="con-icon"></div>
                             <span>其他</span>
                         </div>
                         <div class="con-input">
-                            <p><span  class="pwd">长短帐差额</span><input type="text"   value="100" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="差额必须大于一元且保留两位小数"><span  class="pwd">(不参与平账计算)</span></p>
-                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></textarea></p>
+                            <p><span  class="pwd">长短帐差额</span><input type="text"   value="100" disabled><span  class="pwd">(不参与平账计算)</span></p>
+                            <p><span  class="pwd" style="position: absolute">说明</span><textarea rows="3" cols="20" disabled></textarea></p>
                         </div>
                     </div>
 
                 </div>
-                <input type="submit" class="save"  value="提交工单" >
             </form>
         </div>
     </div>
@@ -199,8 +193,6 @@
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
-<script src="static/js/jquery.form-validator.min.js"></script>
-<script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>
 <script>
     $(function () {
         $.validate({form: "#commentForm"});
@@ -208,81 +200,5 @@
 
     $("#commentForm").submit(function (event) {
 
-    });
-    $(function () {
-//        $(this).ready(function () {
-//            $("#workcon1").hide();
-//            $("#workcon2").hide();
-//            $("#workcon3").hide();
-//        })
-        var s = $("input[name='names']");
-        s.each(function(i) {
-            $(this).click(function(){
-                if(this.checked==true){
-                    if(this.value == 1){
-                        $("#workcon1").attr('name','check');
-                       if($("#workcon2").attr('name') == 'check' && $("#workcon3").attr('name') == 'check'){
-                            $("#workcon1").show();
-                            $("#workcon2").show();
-                            $("#workcon3").show();
-                        }else if($("#workcon2").attr('name') != 'check' && $("#workcon3").attr('name') != 'check'){
-                            $("#workcon1").show();
-                            $("#workcon2").hide();
-                            $("#workcon3").hide();
-                        }else{
-                            $("#workcon1").show();
-                        }
-                    }else if(this.value == 2){
-                        $("#workcon2").attr('name','check');
-                        if($("#workcon1").attr('name') != 'check' && $("#workcon3").attr('name') != 'check'){
-                            $("#workcon1").hide();
-                            $("#workcon2").show();
-                            $("#workcon3").hide();
-                        }else if($("#workcon1").attr('name') == 'check' && $("#workcon3").attr('name') == 'check'){
-                            $("#workcon1").show();
-                            $("#workcon2").show();
-                            $("#workcon3").show();
-                        }else{
-                            $("#workcon2").show();
-                        }
-                    }else if(this.value == 3){
-                        $("#workcon3").attr('name','check');
-                        if($("#workcon2").attr('name') != 'check' && $("#workcon1").attr('name') != 'check'){
-                            $("#workcon1").hide();
-                            $("#workcon2").hide();
-                            $("#workcon3").show();
-                        }else if($("#workcon1").attr('name') == 'check' && $("#workcon2").attr('name') == 'check'){
-                            $("#workcon1").show();
-                            $("#workcon2").show();
-                            $("#workcon3").show();
-                        }else{
-                            $("#workcon3").show();
-                        }
-                    }
-                }else{
-                    if(this.value == 1){
-                        $("#workcon1").removeAttr('name');
-                        $("#workcon1").hide();
-                    }else if(this.value == 2){
-                        $("#workcon2").removeAttr('name');
-                        $("#workcon2").hide();
-                    }else if(this.value == 3){
-                        $("#workcon3").removeAttr('name');
-                        $("#workcon3").hide();
-                    }
-                }
-            });
-        });
-    });
-</script>
-<script>
-    $('.datetimepicker').datetimepicker({
-        lang: "ch",           //语言选择中文
-        format: "Y-m-d",      //格式化日期
-        yearStart: 2017,      //设置最小年份
-        yearEnd: 2020,        //设置最大年份
-        timepicker: false,    //时间选项
-        todayButton: false,    //关闭选择今天按钮
-        validateOnBlur:false   //关闭自动填充
     });
 </script>

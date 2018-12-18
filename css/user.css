@@ -61,14 +61,17 @@
     border: none;
     color: #ffffff;
     font-size: 16px;
-    margin-left: 170px;
-    margin-top: 40px;
+    margin-left: 90px;
+    margin-top: 30px;
     padding-right: 20px;
 }
 .con-button{
     margin: 41px 0 0 42px;
 }
-.con-button button{
+.con-button a{
+    display: inline-block;
+}
+.con-button .wds{
     width: 150px;
     height: 42px;
     border-radius: 5px;
@@ -229,6 +232,8 @@
     font-size: 16px;
     margin: 20px 0 20px 45%;
 }
+
+
 .box2 input{
     width: 180px;
     height: 42px;
@@ -240,6 +245,21 @@
     margin-left: 20px;
     margin-bottom: 20px;
     padding-left: 20px;
+}
+
+.box2 .ajiexi{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    float: right;
+    margin-right: 30px;
+    padding-left: 5px;
 }
 .box2 .jiexi{
     width: 80px;
@@ -259,26 +279,21 @@
     margin-left: 30px;
 }
 
+
 .file {
     position: relative;
     display: inline-block;
-    background: #ffffff;
-    border: 1px solid #4a79e7;
-    padding: 4px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #5a8bff;
+    border-radius: 5px;
+    border: none;
+    padding: 4px 12px;
     overflow: hidden;
     text-decoration: none;
     text-indent: 0;
     line-height: 20px;
-    border-radius: 20px;
-    color: #4a79e7;
-    font-size: 13px;
-
-}
-.tra-file{
-    font-size: 16px;
-    font-weight: normal;
-    color: #323232;
-
+    top: 10px;
 }
 .file input {
     position: absolute;
@@ -286,6 +301,19 @@
     right: 0;
     top: 0;
     opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #d2defa;
+    color: #004974;
+    text-decoration: none;
+}
+
+.tra-file{
+    font-size: 16px;
+    font-weight: normal;
+    color: #323232;
+
 }
 .gradient{
     filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#fff,endcolorstr=#ccc,gradientType=0);
@@ -295,4 +323,52 @@
     background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#ccc));
     background:-o-linear-gradient(top, #fff, #ccc);
 }
-
+.qiehuan1 {
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg, #5a8bff 0%, #4877e6 100%);
+    border-radius: 21px;
+    font-size: 16px;
+    color: #ffffff;
+    border: none;
+    margin-left: 60px
+}
+.option-se{
+    width: 93px;
+    height: 30px;
+    color: #4877e6;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    padding-left: 10px;
+    margin-right: 50px;
+}
+.file-down{
+    color: #5687e7;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.form-itme2{
+    float: left;
+    margin: -10px 0 0 10px;
+}
+.showFileName1{
+    color: #000000;
+    font-size: 14px;
+}
+.tras-type {
+    color: #000000;
+    font-size: 14px;
+}
+.wds-active{
+    width: 150px;
+    height: 42px;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #5a8bff;
+    border-radius: 5px;
+    border: none;
+    margin-right: 20px;
+}

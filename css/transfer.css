@@ -78,7 +78,6 @@
     padding-top: 23px;
 }
 .con-1 .con-input{
-    width: 700px;
     margin-top: 11px;
 }
 
@@ -95,8 +94,8 @@
 /*}*/
 
 .con-1 input{
-    width: 200px;
-    height: 42px;
+    width: 188px;
+    height: 38px;
     color: #646464;
     font-size: 14px;
     background-color: #f7f9fd;

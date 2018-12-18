@@ -127,8 +127,8 @@
     <div class="container">
         <div class="container-con">
             <div class="con-button">
-                <button class="wds">转账申请</button>
-                <button class="wds-re">批量转账申请</button>
+                <button class="wds-active" id="wdss">转账申请</button>
+                <button class="wds" id="wds-re">批量转账申请</button>
             </div>
             <div class="box1">
                 <form action="" id="commentForm">
@@ -164,28 +164,46 @@
             </div>
             <div class="box2" style="display: none">
                 <div class="con-2">
-                    <div class="con-table">
-                        <div class="con-file">
-                            <span class="tra-file">账单文件：</span><a href="javascript:;" class="file gradient">选择文件<input
-                                type="file" id="excel-file"></a>
-                            <button class="jiexi">解析</button>
-                        </div>
 
-                        <table class="exceltable">
-                            <thead class="tablehead"></thead>
-                            <tbody class="tablebody"></tbody>
-                        </table>
-                    </div>
-                    <div class="con-page">
-                        <!--<span>每页显示条数</span>-->
-                        <!--<select name="" id="" class="show-page">-->
-                        <!--<option value="">5</option>-->
-                        <!--<option value="">6</option>-->
-                        <!--<option value="">7</option>-->
-                        <!--</select>-->
-                        <div id="pageToolbar"></div>
-                    </div>
-                    <button>确认提交</button>
+                        <div class="con-table">
+                            <div class="con-file">
+                                <form action="" enctype="multipart/form-data"
+                                      method="post" target="nm_iframe">
+                                    <div class="form-itme2">
+                                        <span class="tras-type">转账类型：</span>
+                                        <select id="type" name="type" class="option-se">
+                                            <option value="DIVIDE">分账</option>
+                                            <option value="BORROW">借款</option>
+                                            <option value="REPAY">还款</option>
+                                        </select>
+
+                                        <a href="javascript:void (0);" class="file">上传文件
+                                        <input type="file"  name="file" id="excel-file" >
+                                        </a>
+                                            <span class="showFileName1"></span>
+                                        <a href="#" class="file-down" download=""> 下载模板</a>
+                                    </div>
+                                    <input id="upload" class="ajiexi" type="submit" value="解析">
+                                </form>
+                                <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+                            </div>
+
+                            <table class="exceltable">
+                                <thead class="tablehead"></thead>
+                                <tbody class="tablebody"></tbody>
+                            </table>
+                        </div>
+                        <div class="con-page">
+                            <!--<span>每页显示条数</span>-->
+                            <!--<select name="" id="" class="show-page">-->
+                            <!--<option value="">5</option>-->
+                            <!--<option value="">6</option>-->
+                            <!--<option value="">7</option>-->
+                            <!--</select>-->
+                            <div id="pageToolbar"></div>
+                        </div>
+                        <button style="margin-bottom: 10px">确认提交</button>
+
                 </div>
             </div>
         </div>
@@ -201,18 +219,19 @@
 <script src="static/js/jquery.form-validator.min.js"></script>
 <script>
     $(function () {
-        $('.box2').ready(function () {
-            $('.box2').css('display', 'none');
+        $('#wdss').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wds-re').attr("class","wds");
+            $('.box1').css('display','block');
+            $('.box2').css('display','none');
         });
-        $('.wds').click(function () {
-            $('.box1').css('display', 'block');
-            $('.box2').css('display', 'none');
-        });
-        $('.wds-re').click(function () {
-            $('.box1').css('display', 'none');
-            $('.box2').css('display', 'block');
+        $('#wds-re').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wdss').attr("class","wds");
+            $('.box1').css('display','none');
+            $('.box2').css('display','block');
         })
-    })
+    });
     $(function () {
         $.validate({form: "#commentForm"});
     });
@@ -220,12 +239,23 @@
     $("#commentForm").submit(function (event) {
 
     });
+    $(".file").on("change","input[type='file']",function(){
+        var filePath=$(this).val();
+        if(filePath.indexOf("xlsx")!=-1 || filePath.indexOf("xls")!=-1){
+            var arr=filePath.split('\\');
+            var fileName=arr[arr.length-1];
+            $(".showFileName1").html(fileName);
+        }else{
+            $(".showFileName1").html("");
+            return false;
+        }
+    })
 </script>
 <script type="text/javascript">
     $('#excel-file').change(function (e) {
         var files = e.target.files;
+        console.log(files)
         var location = files[0].name;
-
         var point = location.lastIndexOf(".");
         var type = location.substr(point);
         if(type == ".xlsx" || type == ".xls"){
@@ -249,12 +279,13 @@
                 for (var sheet in workbook.Sheets) {
                     if (workbook.Sheets.hasOwnProperty(sheet)) {
                         fromTo = workbook.Sheets[sheet]['!ref'];
-                        //console.log(fromTo);
+                        console.log(fromTo);
                         persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
                         // break; // 如果只取第一张表，就取消注释这行
                     }
                 }
-                //console.log(persons);
+                console.log(persons);
+                $('#pageToolbar').html("");
                 var pagesize = 10;
                 var count1 = persons.length;//总数据的条数
                 /*分页*/

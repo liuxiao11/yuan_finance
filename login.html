@@ -113,8 +113,9 @@
                     </div>
                     <div class="k">
                         <i id="icon-pwd" class="a"></i>
-                        <input type="password" placeholder="请输入密码" id="pwd" class="pwd">
-                        <span id="pwdtxt" class="txt"></span>
+                        <input type="password" placeholder="请输入密码" id="pwd" name="password" class="pwd"
+                               data-validation="length" data-validation-length="6-20"
+                               data-validation-error-msg="密码必须为6至20个字符">
                     </div>
                     <div class="k">
                         <select name="account-book" id="account-book">
@@ -140,114 +141,7 @@
 <script src="static/js/jquery-3.3.1.min.js"></script>
 <script src="static/js/jquery.form-validator.min.js"></script>
 <script>
-    //    $.validator.setDefaults({
-    //        submitHandler: function(form) {
-    //            alert("提交事件!");
-    //            form.submit();
-    //        }
-    //    });
-    //    $().ready(function() {
-    //        $("#commentForm").validate({
-    //            rules: {
-    //                name: {
-    //                    required: true,
-    //                    minlength: 2
-    //                },
-    //                pwd: {
-    //                    required: true,
-    //                    minlength: 8
-    //                }
-    //            },
-    //            messages: {
-    //                name: {
-    //                    required: "请输入用户名",
-    //                    minlength: "用户名必需由两个字母组成"
-    //                },
-    //                pwd: {
-    //                    required: "请输入密码",
-    //                    minlength: "密码长度不能小于 8 个字母"
-    //                }
-    //            }
-    //        });
-    //
-    //    });
-
     $(document).ready(function () {
         $.validate({form: '#commentForm'});
     });
-
-
-
-    function check() {
-        if (AccountName() && password1() && isChecked()) {
-            return true;
-        }else{
-            $("#subtxt").html('请检查您的用户名密码及是否选择账簿');
-            return false;
-        }
-    }
-    //验证不为空
-    function isEmptyOrBlank(str) {
-        if (str == null || str.length == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    //验证用户名
-    // function AccountName() {
-    //     var $accN = $("#name").val();
-    //     if (!isEmptyOrBlank($accN)) {
-    //         var $accRegular = /^[a-zA-Z]{1}\w{3,15}$/;
-    //         if (!$accRegular.test($accN)) {
-    //             return false;
-    //         } else {
-    //             return true;
-    //         }
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    //验证密码
-    function password1() {
-        var $password = $("#pwd").val();
-        if (!isEmptyOrBlank($password)) {
-            var $passRegular = /^\w{8,12}$/;
-            if (!$passRegular.test($password)) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    //验证账簿选中
-    function isChecked() {
-        if ($("#account-book").val() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    // $("#name").blur(function(){//用户名文本框失去焦点触发验证事件
-    //     if (!AccountName()) {
-    //         $('#nametxt').show();
-    //         $("#nametxt").html('用户名由4~16位英文字母开头+数字组成')
-    //     } else {
-    //         $('#nametxt').hide();
-    //     }
-    // });
-    $("#pwd").blur(function(){//用户密码框失去焦点触发验证事件
-        if (!password1()) {
-            $('#pwdtxt').show();
-            $("#pwdtxt").html('密码由8-12位英文字母和数字组成的')
-        } else {
-            $('#pwdtxt').hide();
-        }
-    });
-
 </script>

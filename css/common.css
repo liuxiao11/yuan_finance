@@ -30,7 +30,7 @@ img{border:none;}
 .edit-pwd{width: 160px;height: 42px;border-radius: 21px;border: solid 1px #4877e6;font-size: 16px;color: #5384f7;background-color: #ffffff;margin-left: 20px}
 /* 侧边栏 */
 .sidebar-left{float:left;background:#ffffff;z-index:100;width:260px;min-height:668px; height:auto!important; box-shadow: 4px 0 13px 0 rgba(178, 199, 248, 0.4);opacity: 0.96;}
-.sidebar-left .sidebar-nav{ height:auto!important;margin-top: 63px;margin-left: 30px}
+.sidebar-left .sidebar-nav{ height:auto!important;margin-top: 30px;margin-left: 30px;width: 200px;}
 .sidebar-left .sidebar-nav .sidebar-list{font-size:18px;font-weight: normal;color: #646464;}
 /*.sidebar-left .sidebar-nav .active{font-size:18px;width: 200px;height: 48px;background-color: #e8eefb;border-radius: 24px;color: #646464;font-weight: bold}*/
 .sidebar-left .sidebar-nav .sidebar-list .nav-li-icon{margin-left: 25px;}

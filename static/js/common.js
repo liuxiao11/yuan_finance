@@ -11,18 +11,59 @@ $('.sidebar-list').click(function () {
     }
 });
 /*顶部收缩*/
-var yes = 0;
+var pop =  getCookie("popped");
+if (pop === null) {
+    $('.sidebar-top-menu').addClass('active');
+    $('.sidebar-top').show();
+} else if (pop === 'yes'){
+    $('.sidebar-top-menu').removeClass('active');
+    $('.sidebar-top').hide();
+}
+
 $('.sidebar-top-menu').click(function () {
-    $('.sidebar-top').slideToggle(200);
-    if (yes == 0) {
+    if (!$(this).hasClass('active')) {//展开
+        delCookie('popped');
+        $('.sidebar-top').show();
         $(this).addClass('active');
-        yes = 1;
     } else {
+        setCookie('popped','yes','','');
+        $('.sidebar-top').hide();
         $(this).removeClass('active')
-        yes = 0;
 
     }
-})
+});
+
+//写入cookie
+function setCookie(name, value, hours, path) {
+    var name = escape(name);
+    var value = escape(value);
+    var expires = new Date();
+    expires.setTime(expires.getTime() + hours * 3600000);
+    path = path == "" ? "" : ";path=" + path;
+    _expires = (typeof hours) == "string" ? "" : ";expires=" + expires.toUTCString();
+    document.cookie = name + "=" + value + _expires + path;
+}
+
+//读取cookie
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+
+    if(arr=document.cookie.match(reg))
+
+        return unescape(arr[2]);
+    else
+        return null;
+}
+//删除cookie
+function delCookie(name)
+{
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null)
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
 
 /*删除提示*/
 function delAlert(msg, url, data) {

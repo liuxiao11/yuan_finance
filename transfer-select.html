@@ -123,33 +123,35 @@
     <!--内容-->
     <div class="container">
         <div class="container-con">
-            <div class="con-11">
-                转出账户
-                <select name="" id="">
-                    <option value="">全部</option>
-                    <option value="">分公司001</option>
-                    <option value="">分公司002</option>
-                    <option value="">分公司003</option>
-                </select>
-                转入账户
-                <select name="" id="">
-                    <option value="">全部</option>
-                    <option value="">门店001</option>
-                    <option value="">门店002</option>
-                    <option value="">门店003</option>
-                </select>
-                用途
-                <select name="" id="">
-                    <option value="">全部</option>
-                    <option value="">分账</option>
-                    <option value="">分账</option>
-                    <option value="">分账</option>
-                </select>
-                日期
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/> -
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/>
-                <button>查询</button>
-            </div>
+            <form action="" method="post"  id="commentForm">
+                <div class="con-11">
+                    转出账户
+                    <select name="" id="">
+                        <option value="">全部</option>
+                        <option value="">分公司001</option>
+                        <option value="">分公司002</option>
+                        <option value="">分公司003</option>
+                    </select>
+                    转入账户
+                    <select name="" id="">
+                        <option value="">全部</option>
+                        <option value="">门店001</option>
+                        <option value="">门店002</option>
+                        <option value="">门店003</option>
+                    </select>
+                    用途
+                    <select name="" id="">
+                        <option value="">全部</option>
+                        <option value="">分账</option>
+                        <option value="">分账</option>
+                        <option value="">分账</option>
+                    </select>
+                    日期
+                    <input class="datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder="" /> -
+                    <input class="datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/>
+                    <input type="submit" class="button" value="查询" id="user-submit">
+                </div>
+            </form>
             <div class="con-2">
                 <div class="con-table">
                     <table style="margin-top: 23px">
@@ -261,13 +263,43 @@
     $('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
 </script>
 <script>
-    $('.datetimepicker').datetimepicker({
-        lang: "ch",           //语言选择中文
-        format: "Y-m-d",      //格式化日期
-        yearStart: 2017,      //设置最小年份
-        yearEnd: 2020,        //设置最大年份
-        timepicker: false,    //时间选项
-        todayButton: false,    //关闭选择今天按钮
-        validateOnBlur:false   //关闭自动填充
-    });
+
+$('input[name=start]').val(YFormatDate());
+$('input[name=end]').val(getNowFormatDate());
+
+$('input[name=start]').change(function () {
+    console.log($(this).val());
+})
+    //今天
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+    //昨天
+    function YFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate()-1;
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
 </script>

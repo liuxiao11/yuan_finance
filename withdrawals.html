@@ -123,16 +123,17 @@
     <div class="container">
         <div class="container-con">
             <div class="con-button">
-                <button class="wds">提现</button>
-                <button class="wds-re">提现记录</button>
+                <button class="wds-active" id="wdss">转账申请</button>
+                <button class="wds" id="wds-re">批量转账申请</button>
             </div>
             <div class="box1">
                 <form action="" method="post"  id="commentForm">
-                    <div class="con-1" style="top: 140px">
+                    <div class="con-1">
                         <p><span  class="pwd">账户余额</span><input type="text"  value="10000.00"  readonly="readonly"></p>
                         <p><span  class="pwd">银行卡号</span><input type="text"  value="****************3969"  readonly="readonly"></p>
-                        <p><span  class="pwd">提现金额</span><input type="text" placeholder="请输入提现金额" id="wds" class="wds" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="提现金额必须大于一元且保留两位小数"></p>
+                        <p><span  class="pwd">提现金额</span><input type="text" placeholder="请输入提现金额" id="wds" name="wds" ><span class="form-error" id="errmsg"></span></p>
                         <p><span  class="pwd">备注</span><input type="text" placeholder="" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="备注最多50个字"></p>
+                        <p><span class="errMsg" style="display: none">错误信息错误信息</span></p>
                         <input type="submit" class="button" value="提现" id="user-submit">
                     </div>
                 </form>
@@ -244,12 +245,15 @@
 <script>
     $('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
     $(function () {
-
-        $('.wds').click(function () {
+        $('#wdss').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wds-re').attr("class","wds");
             $('.box1').css('display','block');
             $('.box2').css('display','none');
         });
-        $('.wds-re').click(function () {
+        $('#wds-re').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wdss').attr("class","wds");
             $('.box1').css('display','none');
             $('.box2').css('display','block');
         })
@@ -261,4 +265,19 @@
     $("#commentForm").submit(function (event) {
 
     });
+    /*输入验证*/
+    $("input[name='wds']").bind('input propertychange',function(){
+        //做一些事情
+        var val = $(this).val();
+        console.log(val)
+        var reg = /^([1-9]{1}\d*)(\.\d{2})$/;
+        if(reg.test(val)){
+            console.log('正确');
+            $('#errmsg').text('');
+        }else{
+            $('#errmsg').text('提现金额只能大于一元且保留两位小数')
+        }
+    })
+
+
 </script>

@@ -128,8 +128,14 @@
                     <div class="con-file">
                         对账日
                         <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
-                        <span class="tra-file">账单文件：</span><a href="javascript:;" class="file gradient">选择文件<input type="file" id="excel-file" ></a>
-                        <button class="jiexi" style="margin-left: 700px">解析</button>
+                        <form action="" enctype="multipart/form-data"
+                              method="post" target="nm_iframe">
+                            <span class="tra-file">账单文件：</span>
+                            <a href="javascript:;" class="file">选择文件
+                                <input type="file"  name="file" id="excel-file">
+                            </a>
+                            <input id="submitbtn" class="ajiexi" type="submit" value="解析">
+                        </form>
                     </div>
 
                     <table class="exceltable">
@@ -192,6 +198,7 @@
                     }
                 }
                 //console.log(persons);
+                $('#pageToolbar').html("");
                 var pagesize = 10;
                 var count1 = persons.length;//总数据的条数
                 /*分页*/
