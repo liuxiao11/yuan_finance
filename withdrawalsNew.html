@@ -10,10 +10,10 @@
 
     <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
     <link rel="stylesheet" href="css/common.css">
-    <title>远元财务-总账查询</title>
+    <title>远元财务-审核提现</title>
+    <link rel="stylesheet" href="css/user.css">
     <link rel="stylesheet" href="css/check.css">
     <link rel="stylesheet" type="text/css" href="css/paging.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 </head>
 <body>
 <!-- 顶部 -->
@@ -123,71 +123,92 @@
     <!--内容-->
     <div class="container">
         <div class="container-con">
-            <div class="con-1">
-                日期
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/> -
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/>
-                <button>查询</button>
-            </div>
-            <div class="con-2">
-                <div class="con-table">
-                    <table style="margin-top: 23px">
-                        <tr>
-                            <th>对账日</th>
-                            <th>入账总额</th>
-                            <th>营收总额</th>
-                            <th>差额</th>
-                            <th>工单入账</th>
-                            <th>差额结算</th>
-                        </tr>
-                        <tr>
-                            <td>2018-11-30</td>
-                            <td>8938.00</td>
-                            <td>9038.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td>2018-11-30</td>
-                            <td>8938.00</td>
-                            <td>9038.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td>2018-11-30</td>
-                            <td>8938.00</td>
-                            <td>9038.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
-                            <td>0.00</td>
-                        </tr>
-                        <tr>
-                            <td>2018-11-30</td>
-                            <td>8938.00</td>
-                            <td>9038.00</td>
-                            <td>100.00</td>
-                            <td>100.00</td>
-                            <td>0.00</td>
-                        </tr>
-                    </table>
+            <div class="box2">
+                <div class="con-one">
+                    <ul>
+                        <li>门店
+                            <div class="searchBox">
+                                <input type="text" readonly placeholder="点击选择" autocomplete="off" class="form-control" id="appChannelId" name="appChannelId" value=""/>
+                                <input type="hidden" id="store"/>
+                                <div class="searchLable" id="searchBox" >
+                                    <input type="" name="" id="channel" class="search_channel">
+                                    <icon class="search-icon"></icon>
+                                    <ul>
+                                        <li data-value="chong1" data-text="门店1">门店1</li>
+                                        <li data-value="chong2" data-text="门店012">门店012</li>
+                                        <li data-value="chong3" data-text="门店3">门店3</li>
+                                        <li data-value="chong4" data-text="门店4">门店4</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                        <li data-value="chong5" data-text="门店5">门店5</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>申请状态
+                            <select id="status">
+                                <option value="">全部</option>
+                            </select></li>
+                        <li>
+                            <button id="query" class="button">查询</button>
+                        </li>
+                    </ul>
                 </div>
-                <div class="con-page">
-                    <!--<span>每页显示条数</span>-->
-                    <!--<select name="" id="" class="show-page">-->
-                        <!--<option value="">9</option>-->
-                        <!--<option value="">10</option>-->
-                        <!--<option value="">11</option>-->
-                    <!--</select>-->
-                    <div id="pageToolbar"></div>
+                <div class="con-two">
+                    <div class="con-table">
+                        <table>
+                            <thead>
+                            <tr id="tableHead">
+                                <th>时间</th>
+                                <th>提现账户</th>
+                                <th>提现金额</th>
+                                <th>账户余额</th>
+                                <th>备注</th>
+                                <th>申请状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2018.11.11 12:00:00</td>
+                                    <td>1000.00</td>
+                                    <td>0.00</td>
+                                    <td>10000.00</td>
+                                    <td>集团分账</td>
+                                    <td>待审核</td>
+                                    <td><button>拒绝</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2018.11.11 12:00:00</td>
+                                    <td>1000.00</td>
+                                    <td>0.00</td>
+                                    <td>10000.00</td>
+                                    <td>集团分账</td>
+                                    <td>待审核</td>
+                                    <td><button>拒绝</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="con-page">
+                        <!--<span>每页显示条数</span>-->
+                        <!--<select name="" id="" class="show-page">-->
+                            <!--<option value="">5</option>-->
+                            <!--<option value="">6</option>-->
+                            <!--<option value="">7</option>-->
+                        <!--</select>-->
+                        <div id="pageToolbar"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
@@ -195,18 +216,43 @@
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>
-<script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>
+<script src="static/js/jquery.form-validator.min.js"></script>
 <script>
     $('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
-</script>
-<script>
-    $('.datetimepicker').datetimepicker({
-        lang: "ch",           //语言选择中文
-        format: "Y-m-d",      //格式化日期
-        yearStart: 2017,      //设置最小年份
-        yearEnd: 2020,        //设置最大年份
-        timepicker: false,    //时间选项
-        todayButton: false,    //关闭选择今天按钮
-        validateOnBlur:false   //关闭自动填充
+    $(function () {
+        $('#wdss').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wds-re').attr("class","wds");
+            $('.box1').css('display','block');
+            $('.box2').css('display','none');
+        });
+        $('#wds-re').click(function () {
+            $(this).attr("class","wds-active");
+            $('#wdss').attr("class","wds");
+            $('.box1').css('display','none');
+            $('.box2').css('display','block');
+        })
     });
+    $(function () {
+        $.validate({form: "#commentForm"});
+    });
+
+    $("#commentForm").submit(function (event) {
+
+    });
+    /*输入验证*/
+    $("input[name='wds']").bind('input propertychange',function(){
+        //做一些事情
+        var val = $(this).val();
+        console.log(val)
+        var reg = /^([1-9]{1}\d*)(\.\d{2})$/;
+        if(reg.test(val)){
+            console.log('正确');
+            $('#errmsg').text('');
+        }else{
+            $('#errmsg').text('提现金额只能大于一元且保留两位小数')
+        }
+    })
+
+
 </script>

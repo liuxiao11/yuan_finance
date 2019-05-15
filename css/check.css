@@ -8,34 +8,44 @@
     display: inline-block;
     padding-bottom: 30px;
 }
-.con-1{
+
+.con-1 {
     width: 94%;
     margin: 41px 0 0 30px;
     color: #323232;
     font-size: 16px;
- }
-.con-1 input{
-    width: 188px;
+}
+
+.con-1 ul li {
+    float: left;
+    color: #323232;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.con-1 input {
+    width: 140px;
     height: 38px;
     color: #646464;
     font-size: 14px;
     background-color: #f7f9fd;
     border-radius: 5px;
     border: solid 1px #d2defa;
-    margin:0 28px 0 20px;
+    margin: 0 28px 0 20px;
     padding-left: 20px;
 }
-.con-1 select{
-    width: 200px;
+
+.con-1 select {
+    width: 170px;
     height: 42px;
     background-color: #f0f5ff;
     border-radius: 5px;
     border: solid 1px #d2defa;
-    margin:0 28px 0 20px;
+    margin: 0 28px 0 20px;
     padding-left: 10px;
 }
 
-.con-1 button{
+.con-1 button {
     width: 80px;
     height: 42px;
     background-image: linear-gradient(180deg,
@@ -47,7 +57,7 @@
     font-size: 16px;
 }
 
-.con-1 .excel{
+.con-1 .excel {
     width: 100px;
     height: 42px;
     border-radius: 5px;
@@ -57,7 +67,8 @@
     background: #ffffff;
     float: right;
 }
-.con-1 .add-user{
+
+.con-1 .add-user {
     width: 100px;
     height: 42px;
     border-radius: 5px;
@@ -67,47 +78,57 @@
     background: #ffffff;
     float: right;
 }
-.con-2{
+
+.con-2 {
     width: 96%;
     display: inline-block;
     margin: 0 0 0 30px;
 }
-.con-2 .con-table{
+
+.con-2 .con-table {
     width: 100%;
 }
-.con-2 .con-table table{
+
+.con-2 .con-table table {
     color: #323232;
     font-size: 16px;
     width: 100%;
     text-align: center;
     background-color: #f6f8fc;
     margin-top: 50px;
+    word-break: break-all;
 }
-.con-2 .con-table table tr th{
+
+.con-2 .con-table table tr th {
     background-color: #e9eef9;
     height: 60px;
 }
-.con-2 .con-table table tr{
+
+.con-2 .con-table table tr {
     border: 1px solid #ffffff;
     height: 40px;
 }
-.con-2 .con-table table tr:hover{
+
+.con-2 .con-table table tr:hover {
     background-color: #ffffff;
-    box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
+    box-shadow: 0px 6px 7px 0px rgba(144, 163, 207, 0.34);
 }
-.con-2 .con-table table button{
-    height: 28px;
+
+.con-2 .con-table table button {
     border-radius: 5px;
     border: solid 1px #4a79e7;
     color: #4a79ea;
     font-size: 16px;
     background: #ffffff;
     margin-right: 8px;
+    padding: 3px 4px;
 }
-.con-2 .con-table table a{
+
+.con-2 .con-table table a {
     display: inline;
 }
-.con-2 .con-table table .active{
+
+.con-2 .con-table table .active {
     height: 28px;
     border-radius: 5px;
     border: solid 1px #d2d2d2;
@@ -116,14 +137,16 @@
     background: #d2d2d2;
     margin-right: 8px;
 }
-.con-2 .con-page{
+
+.con-2 .con-page {
     width: 100%;
     height: 30px;
     color: #646464;
     font-size: 14px;
     margin-top: 35px;
 }
-.con-2 .con-page .show-page{
+
+.con-2 .con-page .show-page {
     width: 71px;
     height: 30px;
     background-color: #ffffff;
@@ -131,36 +154,66 @@
     border: solid 1px #e6e6e6;
     margin-left: 20px;
 }
-.con-2 .con-span{
-    font-size: 16px;
-    font-weight: normal;
-    color: #323232;
+.con-2 .con-ul {
+    margin-top: 40px;
+}
 
-}
-.con-span span{
-    margin-top: 50px;
+.con-2 .con-ul li {
     display: inline-block;
-    margin-right: 135px;
-    margin-bottom: -23px;
+    color: #323232;
+    font-size: 16px;
+    margin: 10px 45px 0 0;
 }
-.con-11{
-    width: 100%;
+.con-2 .quiceR-btn-submit{
+    width: 160px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 20px 0 20px 45%;
+}
+.con-2 .quiceR-btn-submit[disabled]{
+    width: 160px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #d3d8de 0%,
+    #c9d0de 100%);
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 20px 0 20px 45%;
+}
+
+.con-11 {
+    width: 94%;
     margin: 41px 0 0 40px;
     color: #323232;
     font-size: 16px;
 }
 
-.con-11 select{
+.con-11 ul li {
+    float: left;
+    color: #323232;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.con-11 select {
     width: 130px;
     height: 42px;
     background-color: #f0f5ff;
     border-radius: 5px;
     border: solid 1px #d2defa;
-    margin:0 48px 0 20px;
+    margin: 0 28px 0 20px;
     padding-left: 10px;
 }
 
-.con-11 button{
+.con-11 button {
     width: 80px;
     height: 42px;
     background-image: linear-gradient(180deg,
@@ -171,18 +224,111 @@
     color: #ffffff;
     font-size: 16px;
 }
-.con-11 input{
-    width: 90px;
+
+.con-11 input {
+    width: 96px;
     height: 38px;
     color: #646464;
     font-size: 14px;
     background-color: #f7f9fd;
     border-radius: 5px;
     border: solid 1px #d2defa;
-    margin:0 28px 0 20px;
-    padding-left: 20px;
+    margin: 0 28px 0 20px;
+    padding-left: 15px;
 }
-.date-box{
-    display:inline-block;
-    position:relative;
+
+.con-11 .excel {
+    width: 120px;
+    height: 42px;
+    border-radius: 5px;
+    border: solid 1px #4a79e7;
+    color: #4a79ea;
+    font-size: 16px;
+    background: #ffffff;
+    float: right;
+    margin-left: 20px;
+}
+
+.date-box {
+    display: inline-block;
+    position: relative;
+}
+
+/*公共表格内按钮disabled样式*/
+.con-table table button:disabled {
+    border-radius: 5px;
+    border: solid 1px #d2d2d2;
+    color: #ffffff;
+    font-size: 16px;
+    background: #d2d2d2;
+    margin-right: 8px;
+    padding: 3px 4px;
+}
+
+/* 筛选框*/
+.searchBox {
+    display: inline-block;
+}
+
+.searchBox input, .searchBox li {
+    cursor: pointer;
+}
+
+.searchLable {
+    width: 150px;
+    height: 400px;
+    color: #646464;
+    font-size: 14px;
+    background-color: #f7f9fd;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin: 0 28px 0 17px;
+    padding: 8px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: none;
+    position: absolute;
+}
+
+.searchBox .search_channel {
+    width: 130px;
+    height: 25px;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.searchBox ul {
+    display: block;
+    height: 360px;
+    overflow-y: scroll;
+    margin: 5px 0;
+}
+
+.searchBox ul li {
+    display: block;
+    width: 123px;
+    padding: 5px;
+    margin: 0;
+}
+
+.searchBox ul li:hover {
+    background: #288df0;
+    color: #fff;
+}
+
+.searchBox .search-icon {
+    width: 20px;
+    height: 20px;
+    background: url("../images/icon/search_24px_1223096_easyicon.net.png");
+    /*background: black;*/
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.con-1 .con-store{
+    margin: 23px 0 0 132px;
+}
+.con-1 .con-store li{
+    margin: 0;
 }

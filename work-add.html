@@ -11,6 +11,7 @@
     <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
     <link rel="stylesheet" href="css/common.css">
     <title>远元财务-对账工单创建</title>
+    <link rel="stylesheet" href="css/check.css">
     <link rel="stylesheet" href="css/transfer.css">
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 </head>
@@ -134,15 +135,37 @@
                                 <span  class="pwd">对账日</span>
                                 <input class="form-control datetimepicker" autocomplete="off" type="text" size="20" value="" name="start" placeholder=""/>
                             </p>
+                            <div style="display: inline-block">
+                                <ul class="con-store">
+                                    <li>门店
+                                        <div class="searchBox">
+                                            <input type="text" readonly placeholder="点击选择" autocomplete="off" class="form-control" id="appChannelId" name="appChannelId" value=""/>
+                                            <input type="hidden" id="store"/>
+                                            <div class="searchLable" id="searchBox" >
+                                                <input type="" name="" id="channel" class="search_channel">
+                                                <icon class="search-icon"></icon>
+                                                <ul>
+                                                    <li data-value="chong1" data-text="门店1">门店1</li>
+                                                    <li data-value="chong2" data-text="门店012">门店012</li>
+                                                    <li data-value="chong3" data-text="门店3">门店3</li>
+                                                    <li data-value="chong4" data-text="门店4">门店4</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><button class="diff">查询差额</button></li>
+                                </ul>
+                            </div>
                             <p>
-                                <span  class="pwd">门店</span>
-                                <select name="" id="">
-                                    <option value="">门店1</option>
-                                    <option value="">门店2</option>
-                                </select>
-                                <button class="diff">查询差额</button>
-                            </p>
-                            <p><span  class="pwd">差额</span>
+                                <span  class="pwd">差额</span>
                                 <input type="text"  id="diff" value="300" readonly="readonly">
                             </p>
                             <p>
@@ -198,6 +221,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script src="static/js/jquery.form-validator.min.js"></script>
 <script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>

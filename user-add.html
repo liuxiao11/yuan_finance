@@ -11,6 +11,7 @@
     <!--<link rel="Shortcut Icon" type="images/x-icon" href="&lt;!&ndash;# include virtual='/common/img_domain' &ndash;&gt;favicon.ico">-->
     <link rel="stylesheet" href="css/common.css">
     <title>远元财务-添加用户</title>
+    <link rel="stylesheet" href="css/check.css">
     <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
@@ -123,16 +124,21 @@
         <div class="container-con">
             <form action="" id="commentForm">
                 <div class="con-1">
-                    <p><span  class="pwd">用户名</span><input type="text"  id="name" placeholder="请输入用户名" name="name" class="name"
+                    <p><span  class="pwd">用户名</span>
+                        <input type="text"  id="name" placeholder="请输入用户名" name="name" class="name"
                                                            data-validation="length alphanumeric" data-validation-length="3-20"
                                                            data-validation-error-msg="用户名必须为字母数字4至20个字符"></p>
-                    <p><span  class="pwd">密码</span><input type="password" id="password" placeholder="请输入密码" name="password" class="password"
+                    <p><span  class="pwd">密码</span>
+                        <input type="password" id="password" placeholder="请输入密码" name="password" class="password"
                                                           data-validation="length" data-validation-length="6-20"
                                                           data-validation-error-msg="密码必须为6至20个字符"></p>
-                    <p><span  class="pwd">确认密码</span><input type="password" id="repwd" placeholder="请再次输入密码" name="repwd" data-validation="equalTo"
+                    <p><span  class="pwd">确认密码</span>
+                        <input type="password" id="repwd" placeholder="请再次输入密码" name="repwd" data-validation="equalTo"
                                                             class="repwd" ></p>
-                    <p><span  class="pwd">姓名</span><input type="text" id="username" placeholder="请输入姓名" data-validation="custom" data-validation-regexp="^([\u4e00-\u9fa5]){2,4}$" data-validation-error-msg="姓名必须为中文2-4字符"></p>
-                    <p><span  class="pwd">手机号</span><input type="text" id="phone" placeholder="请输入手机号" data-validation="custom" data-validation-regexp="^1[34578]\d{9}$" data-validation-error-msg="手机号格式不正确"></p>
+                    <p><span  class="pwd">姓名</span>
+                        <input type="text" id="username" placeholder="请输入姓名" data-validation="custom" data-validation-regexp="^([\u4e00-\u9fa5]){2,4}$" data-validation-error-msg="姓名必须为中文2-4字符"></p>
+                    <p><span  class="pwd">手机号</span>
+                        <input type="text" id="phone" placeholder="请输入手机号" data-validation="custom" data-validation-regexp="^1[34578]\d{9}$" data-validation-error-msg="手机号格式不正确"></p>
                     <p>
                         <span  class="pwd">账户角色</span>
                         <select name="" id="role">
@@ -142,16 +148,35 @@
                             <option value="">分公司财务</option>
                         </select>
                     </p>
-                    <p>
-                        <span  class="pwd">所属组织</span>
-                        <select name="" id="group">
-                            <option value="">分公司001</option>
-                            <option value="">分公司001 </option>
-                            <option value="">分公司001 </option>
-                            <option value="">分公司001 </option>
-                        </select>
-                    </p>
-                    <input type="submit" class="button" value="提交" id="user-submit">
+                    <div style="display: inline-block">
+                        <ul class="con-store" style="margin: 0 0 0 40px;">
+                            <li>上级组织
+                                <div class="searchBox">
+                                    <input type="text" readonly placeholder="点击选择" autocomplete="off" class="form-control" id="appChannelId" name="appChannelId" value=""/>
+                                    <input type="hidden" id="store"/>
+                                    <div class="searchLable" id="searchBox" >
+                                        <input type="" name="" id="channel" class="search_channel">
+                                        <icon class="search-icon"></icon>
+                                        <ul>
+                                            <li data-value="chong1" data-text="门店1">门店1</li>
+                                            <li data-value="chong2" data-text="门店012">门店012</li>
+                                            <li data-value="chong3" data-text="门店3">门店3</li>
+                                            <li data-value="chong4" data-text="门店4">门店4</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                            <li data-value="chong5" data-text="门店5">门店5</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p><input type="submit" class="button" value="提交" id="user-submit" style="padding: 0" ></p>
                 </div>
             </form>
 
@@ -161,6 +186,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script src="static/js/jquery.form-validator.min.js"></script>
 <script>

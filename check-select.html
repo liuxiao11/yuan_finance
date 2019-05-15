@@ -127,23 +127,24 @@
     <div class="container">
         <div class="container-con">
             <div class="con-1">
-                分公司
-                <select name="" id="">
-                    <option value="">分公司001</option>
-                    <option value="">分公司002</option>
-                    <option value="">分公司003</option>
-                </select>
-                门店
-                <select name="" id="">
-                    <option value="">门店001</option>
-                    <option value="">门店002</option>
-                    <option value="">门店003</option>
-                </select>
-                日期
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/> -
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/>
-
-                <button>查询</button>
+                <ul>
+                    <li>分公司
+                        <select name="" id="">
+                            <option value="">分公司001</option>
+                            <option value="">分公司002</option>
+                            <option value="">分公司003</option>
+                        </select></li>
+                    <li>门店
+                        <select name="" id="">
+                            <option value="">门店001</option>
+                            <option value="">门店002</option>
+                            <option value="">门店003</option>
+                        </select></li>
+                    <li>日期
+                        <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>至
+                        <input class="form-control datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/></li>
+                    <li><button>查询</button></li>
+                </ul>
             </div>
             <div class="con-2">
                 <div class="con-table">
@@ -263,6 +264,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>

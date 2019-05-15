@@ -126,22 +126,29 @@
             <div class="box2">
                 <div class="con-table">
                     <div class="con-file">
-                        对账日
-                        <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
                         <form action="" enctype="multipart/form-data"
-                              method="post" target="nm_iframe">
-                            <span class="tra-file">账单文件：</span>
-                            <a href="javascript:;" class="file">选择文件
-                                <input type="file"  name="file" id="excel-file">
-                            </a>
-                            <input id="submitbtn" class="ajiexi" type="submit" value="解析">
+                              method="post" target="nm_iframe" style="margin-top: 41px">
+                            <div class="form-itme2">
+                                <span class="tras-type">对账日：</span>
+                                <input class="form-control datetimepicker" autocomplete="off" type="text" size="20" value="" name="start" placeholder="" style="margin: 0 20px 0 0;width: 140px;height: 38px"/>
+                                <a href="javascript:void (0);" class="file">上传文件
+                                    <input type="file"  name="file" id="excel-file" >
+                                </a>
+                                <span class="showFileName1"></span>
+                                <a href="#" class="file-down" download=""> 下载模板</a>
+                            </div>
+                            <input id="upload" class="ajiexi" type="submit" value="解析">
                         </form>
+                        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
                     </div>
-
+                    <div class="con-warning">
+                        注意：仅现金收入、刷卡收入、支付宝、微信收入参与该系统对账。
+                    </div>
                     <table class="exceltable">
                         <thead class="tablehead"></thead>
                         <tbody class="tablebody"></tbody>
                     </table>
+
                     <div class="con-page">
                     <!--<span>每页显示条数</span>-->
                     <!--<select name="" id="" class="show-page">-->
@@ -160,6 +167,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>
@@ -277,6 +285,17 @@
 </script>
 <script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>
 <script>
+    $(".file").on("change","input[type='file']",function(){
+        var filePath=$(this).val();
+        if(filePath.indexOf("xlsx")!=-1 || filePath.indexOf("xls")!=-1){
+            var arr=filePath.split('\\');
+            var fileName=arr[arr.length-1];
+            $(".showFileName1").html(fileName);
+        }else{
+            $(".showFileName1").html("");
+            return false;
+        }
+    })
     $('.datetimepicker').datetimepicker({
         lang: "ch",           //语言选择中文
         format: "Y-m-d",      //格式化日期

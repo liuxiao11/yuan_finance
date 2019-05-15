@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="css/common.css">
     <title>远元财务-首页</title>
     <style>
-        .container-left {width: 850px;height: 400px;background-color: #ffffff;box-shadow: 0px 8px 29px 0px rgba(178, 199, 248, 0.4);border-radius: 5px;opacity: 0.96;float: left}
+        .container-left {width: 45%;min-height: 400px;background-color: #ffffff;box-shadow: 0px 8px 29px 0px rgba(178, 199, 248, 0.4);border-radius: 5px;opacity: 0.96;float: left}
         .container-left .con-left-top{margin-left: 30px;line-height: 69px}
         .container-left .con-left-top em{width: 20px;height: 20px;background-color: #ff6767;border-radius: 50%;display: inline-block}
         .container-left .con-left-top span{color: #323232;font-size: 18px;font-weight: normal;margin-left: 8px}
-        .container-left .con-left-border {width: 820px;height: 1px;background-color: #e6e6e6;margin-left: 30px}
+        .container-left .con-left-border {width: 95%;height: 1px;background-color: #e6e6e6;margin-left: 30px}
         .container-left .con-left-container ol li{color: #323232;font-size: 16px;font-weight: normal;padding-top: 25px}
         ol {list-style-type: none;counter-reset: li;}
-        ol li:before {content: '0'counter(li)' ';counter-increment: li;font-size: 22px;color: #323232;margin-right: 35px;}
+        ol li:nth-child(-n+9):before {content: '0'counter(li)' ';counter-increment: li;font-size: 22px;color: #323232;margin-right: 35px;}
+        ol li:nth-child(n+10):before {content: counter(li)' ';counter-increment: li;font-size: 22px;color: #323232;margin-right: 35px;}
         .container-left .con-left-container .con-view{width: 70px;height: 32px;background-color: #ff6767;border-radius: 16px;border: none;color: #ffffff;font-size: 16px;float: right;margin-right: 49px}
         .container-right {width: 600px;height: 460px;background-color: #ffffff;box-shadow: 0px 8px 29px 0px rgba(178, 199, 248, 0.4);border-radius: 5px;opacity: 0.96;float: left;margin-left: 40px}
         .container-right .con-left-top{margin-left: 30px;line-height: 69px}
@@ -151,10 +152,20 @@
             </div>
             <div class="con-left-container">
                 <ol>
-                    <li>×××分公司的对账工单已发送，需要确认。<button class="con-view">查看</button></li>
+                    <li>×××分公司的对账工单已发送，需要确认。<button class="con-view" id="contest">查看</button></li>
                     <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
                     <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
                     <li>×××分公司的对账工单已发送，需要确认。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
+                    <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
                     <li>×××分公司10月31日对账单已提交。<button class="con-view">查看</button></li>
                 </ol>
             </div>
@@ -184,5 +195,11 @@
 </body>
 </html>
 <script src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script src="static/js/common.js"></script>
+<script>
+//    $("#contest").click(function () {
+//        newConfirm('111','xuixxx','','','')
+//    })
+</script>
 

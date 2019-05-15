@@ -1,5 +1,7 @@
 var conHeight = parseInt($('.container-con').height());
 $('.sidebar-left').css('min-height', conHeight + 70 + 'px');
+var conHeight = parseInt($('.container-left').height());
+$('.sidebar-left').css('min-height', conHeight + 70 + 'px');
 
 /*侧边栏展开关闭*/
 $('.sidebar-list').click(function () {
@@ -11,59 +13,27 @@ $('.sidebar-list').click(function () {
     }
 });
 /*顶部收缩*/
-var pop =  getCookie("popped");
-if (pop === null) {
-    $('.sidebar-top-menu').addClass('active');
-    $('.sidebar-top').show();
-} else if (pop === 'yes'){
+var pop = $.cookie('popped');
+if (pop === 'yes') {
     $('.sidebar-top-menu').removeClass('active');
     $('.sidebar-top').hide();
+} else {
+    $('.sidebar-top-menu').addClass('active');
+    $('.sidebar-top').show();
 }
 
 $('.sidebar-top-menu').click(function () {
     if (!$(this).hasClass('active')) {//展开
-        delCookie('popped');
+        $.cookie('popped','no',{path:'/'});
         $('.sidebar-top').show();
         $(this).addClass('active');
     } else {
-        setCookie('popped','yes','','');
+        $.cookie('popped','yes',{path:'/'});
         $('.sidebar-top').hide();
         $(this).removeClass('active')
-
     }
 });
 
-//写入cookie
-function setCookie(name, value, hours, path) {
-    var name = escape(name);
-    var value = escape(value);
-    var expires = new Date();
-    expires.setTime(expires.getTime() + hours * 3600000);
-    path = path == "" ? "" : ";path=" + path;
-    _expires = (typeof hours) == "string" ? "" : ";expires=" + expires.toUTCString();
-    document.cookie = name + "=" + value + _expires + path;
-}
-
-//读取cookie
-function getCookie(name)
-{
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-
-    if(arr=document.cookie.match(reg))
-
-        return unescape(arr[2]);
-    else
-        return null;
-}
-//删除cookie
-function delCookie(name)
-{
-    var exp = new Date();
-    exp.setTime(exp.getTime() - 1);
-    var cval=getCookie(name);
-    if(cval!=null)
-        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
-}
 
 /*删除提示*/
 function delAlert(msg, url, data) {
@@ -106,13 +76,13 @@ function errorAlert(msg, callback) {
     str += '<div class="popAlertBox" >';
     str += '<div class="popFail">';
     str += '<div class="fail">';
-    str += '<img src="images/cuowu.png" alt="">';
+    // str += '<img src="images/cuowu.png" alt="">';
     str += '<p>' + msg + '</p>';
     str += '<button class="popback">返回</button>';
     str += '</div> </div> </div> </div>';
     $('body').append(str);
     $('.popback').click(function () {
-        $('.popAlertFail').css('display', 'none');
+        $('.popAlertFail').remove();
         if (callback != null) {
             callback();
         }
@@ -136,13 +106,12 @@ function successAlert(msg, callback) {
     str += '</div> </div> </div> </div>';
     $('body').append(str);
     $('.popview').click(function () {
-        $('.popAlertSucc').css('display', 'none');
+        $('.popAlertSucc').remove();
         if (callback != null) {
             callback();
         }
     });
 }
-
 function ajaxPost(url, data, callback) {
     $.post({
         url: url,
@@ -192,14 +161,77 @@ function newConfirm(title, msg, url, data, callback) {
         ' <div class="popIs">' +
         ' <div class="is">' +
         ' <p>' + title + '</p>' +
-        '<span>'+ msg +'</span>' +
+        '<span>' + msg + '</span>' +
         ' <br>' +
         ' <button class="cancel" id="cancel">取消</button>' +
         ' <button class="delete" id="delete">确认</button>' +
-        ' </div>' + ' </div>' + ' </div>' + '</div>')
-        .on('click', '#delete', function () {
+        ' </div>' + ' </div>' + ' </div>' + '</div>');
+
+        $('#delete').click( function () {
+            $('.popAlertDel').remove();
             ajaxPost(url, data, callback);
-        }).on('click', '#cancel', function () {
-        $('.popAlertDel').remove();
+        });
+        $('#cancel').click( function () {
+            $('.popAlertDel').remove();
+        })
+}
+
+function searchSelect(btn, toggle, text, val, callback) {
+    // 选择下拉框 展示隐藏
+    function btnToggle(btn, toggle) {
+        $(btn).click(function () {
+            $(toggle).slideToggle(100);
+        });
+    }
+
+    btnToggle(btn, toggle);
+    var channelLi = $(toggle + ' li');
+    // 输入内容
+    $(text).bind('input propertychange', function () {
+        $('.search-loading').show();
+        if ($(this).val() !== '') {
+            setTimeout(function(){
+                select(channelLi, $(text).val());
+                $('.search-loading').hide();
+            },200)
+        } else {
+            setTimeout(function(){
+                $(channelLi).show();
+                $('.search-loading').hide();
+            },13)
+        }
+    });
+
+    // 筛选条件
+    var l_value;
+    function select(labelList, channel) {
+        for (var i = 0; i < labelList.length; i++) {
+            (function(i){
+                l_value = $(labelList[i]).text();
+                if (l_value.match(channel)) {
+                    $(labelList[i]).show();
+                } else {
+                    $(labelList[i]).hide();
+                }
+            })(i)
+        }
+    }
+
+    // 选择
+    channelLi.on('click', function () {
+        var val1 = $(this).attr('data-value'),
+            text1 = $(this).attr('data-text');
+        $(btn).val(text1);
+        $(val).val(val1);
+        $(toggle).slideToggle(200);
+        if (callback && typeof callback === "function") {
+            callback();
+        }
     });
 }
+
+$(function() {
+    searchSelect('#appChannelId','#searchBox','#channel','#store');
+    searchSelect('#appChannelId1','#searchBox1','#channel1','#branch');
+    searchSelect('#branch-selector','#branch-box','#branch-value','#branch');
+});

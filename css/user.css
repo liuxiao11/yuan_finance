@@ -14,12 +14,14 @@
     color: #323232;
     font-size: 16px;
  }
+
+
 .con-1 p .pwd{
     color: #323232;
     font-size: 16px;
     text-align: right;
     display: inline-block;
-    width: 65px;
+    width: 105px;
 }
 .con-1 .pwdtxt{
     color: #991e36;
@@ -61,9 +63,21 @@
     border: none;
     color: #ffffff;
     font-size: 16px;
-    margin-left: 90px;
-    margin-top: 30px;
-    padding-right: 20px;
+    margin-left: 120px;
+    margin-top: 20px;
+}
+.con-1 .button[disabled]{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #d3d8de 0%,
+    #c9d0de 100%);
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin-left: 120px;
+    margin-top: 20px;
 }
 .con-button{
     margin: 41px 0 0 42px;
@@ -95,6 +109,7 @@
     text-align: center;
     background-color: #f6f8fc;
     margin-top: 40px;
+    word-break: break-all;
 }
 .con-2 .con-table table tr th{
     background-color: #e9eef9;
@@ -109,13 +124,13 @@
     box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
 }
 .con-2 .con-table table button{
-    height: 28px;
     border-radius: 5px;
     border: solid 1px #4a79e7;
     color: #4a79ea;
     font-size: 16px;
     background: #ffffff;
     margin-right: 8px;
+    padding: 3px 4px;
 }
 .con-2 .con-table table .active{
     height: 28px;
@@ -172,10 +187,15 @@
     text-align: center;
     background-color: #f6f8fc;
     margin: 30px 0 10px 40px;
+    word-break: break-all;
 }
 .box2 .con-table table tr th{
     background-color: #e9eef9;
     height: 60px;
+}
+.box2 .con-table table thead{
+    background-color: #e9eef9;
+    font-weight:bold;
 }
 .box2 .con-table table tr{
     border: 1px solid #ffffff;
@@ -186,13 +206,13 @@
     box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
 }
 .box2 .con-table table button{
-    height: 28px;
     border-radius: 5px;
     border: solid 1px #4a79e7;
     color: #4a79ea;
     font-size: 16px;
     background: #ffffff;
     margin-right: 8px;
+    padding: 3px 4px;
 }
  .con-table table .active{
     height: 28px;
@@ -232,7 +252,18 @@
     font-size: 16px;
     margin: 20px 0 20px 45%;
 }
-
+.box2 button[disabled]{
+    width: 160px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #d3d8de 0%,
+    #c9d0de 100%);
+    border-radius: 21px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 20px 0 20px 45%;
+}
 
 .box2 input{
     width: 180px;
@@ -371,4 +402,180 @@
     border-radius: 5px;
     border: none;
     margin-right: 20px;
+}
+/*公共表格内按钮disabled样式*/
+.con-table table button:disabled{
+    border-radius: 5px;
+    border: solid 1px #d2d2d2;
+    color: #ffffff;
+    font-size: 16px;
+    background: #d2d2d2;
+    margin-right: 8px;
+    padding: 3px 4px;
+}
+
+.con-one{
+    width: 94%;
+    margin: 41px 0 0 42px;
+    color: #323232;
+    font-size: 16px;
+}
+.con-one ul li{
+    float: left;
+    color: #323232;
+    font-size: 16px;
+}
+.box2 .con-one ul li input{
+    width: 170px;
+    height: 38px;
+    color: #646464;
+    font-size: 14px;
+    background-color: #f7f9fd;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin: 0 28px 0 20px;
+    padding-left: 20px;
+}
+.box2 .searchBox .search_channel {
+    width: 155px;
+    height: 25px;
+    margin: 0;
+    padding: 5px 10px;
+}
+.con-one select{
+    width: 200px;
+    height: 42px;
+    background-color: #f0f5ff;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin:0 28px 0 20px;
+    padding-left: 10px;
+}
+
+.con-one .button{
+    width: 80px;
+    height: 42px;
+    background-image: linear-gradient(180deg,
+    #5a8bff 0%,
+    #4877e6 100%);
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 0 50px 0;
+}
+
+.con-two{
+    width: 95%;
+}
+.con-two .con-table{
+    width: 100%;
+}
+.con-two .con-table table{
+    color: #323232;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #f6f8fc;
+    margin-top: 40px;
+    word-break: break-all;
+}
+.con-two .con-table table tr th{
+    background-color: #e9eef9;
+    height: 60px;
+}
+.con-two .con-table table tr{
+    border: 1px solid #ffffff;
+    height: 40px;
+}
+.con-two .con-table table tr:hover{
+    background-color: #ffffff;
+    box-shadow: 0px 6px 7px 0px  rgba(144, 163, 207, 0.34);
+}
+.con-two .con-table table button{
+    width: 85px;
+    height: 28px;
+    border-radius: 5px;
+    border: solid 1px #4a79e7;
+    color: #4a79ea;
+    font-size: 16px;
+    background: #ffffff;
+    margin: 0 8px 0 0;
+}
+.con-two .con-table table button[disabled]{
+    width: 85px;
+    height: 28px;
+    border-radius: 5px;
+    border: solid 1px #d2d2d2;
+    color: #ffffff;
+    font-size: 16px;
+    background: #d2d2d2;
+    margin: 0 8px 0 0;
+}
+
+.con-two .con-table table .active{
+    height: 28px;
+    border-radius: 5px;
+    border: solid 1px #d2d2d2;
+    color: #ffffff;
+    font-size: 16px;
+    background: #d2d2d2;
+    margin-right: 8px;
+}
+.con-two .con-page{
+    width: 100%;
+    height: 30px;
+    color: #646464;
+    font-size: 14px;
+    margin-top: 35px;
+}
+.con-two .con-page .show-page{
+    width: 71px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: solid 1px #e6e6e6;
+    margin-left: 20px;
+}
+.con-two .con-span{
+    font-size: 16px;
+    font-weight: normal;
+    color: #323232;
+}
+.searchLable {
+    width: 245px;
+    height: 400px;
+    color: #646464;
+    font-size: 14px;
+    background-color: #f7f9fd;
+    border-radius: 5px;
+    border: solid 1px #d2defa;
+    margin: 0 28px 0 20px;
+    padding: 8px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: none;
+    position: absolute;
+}
+
+.searchBox .search_channel {
+    width: 225px;
+    height: 25px;
+    margin: 0;
+    padding: 5px 10px;
+}
+.searchBox ul {
+    display: block;
+    height: 360px;
+    overflow-y: scroll;
+    margin: 5px 0;
+}
+.searchBox ul li {
+    display: block;
+    width: 155px;
+    padding: 5px;
+    margin: 0;
+}
+.searchBox input{
+    margin-bottom: 0;
 }

@@ -124,16 +124,59 @@
     <div class="container">
         <div class="container-con">
             <div class="con-1">
-                门店
-                <select name="" id="">
-                    <option value="">全部</option>
-                    <option value="">门店001</option>
-                    <option value="">门店001</option>
-                </select>
-                日期
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
-                <button>查询</button>
-                <button class="excel">导出Excel</button>
+                <ul>
+                    <li>门店
+                        <div class="searchBox">
+                            <input type="text" readonly placeholder="点击选择" autocomplete="off" class="form-control" id="appChannelId" name="appChannelId" value=""/>
+                            <input type="hidden" id="store"/>
+                            <div class="searchLable" id="searchBox" >
+                                <input type="" name="" id="channel" class="search_channel">
+                                <icon class="search-icon"></icon>
+                                <ul>
+                                    <li data-value="chong1" data-text="门店1">门店1</li>
+                                    <li data-value="chong2" data-text="门店012">门店012</li>
+                                    <li data-value="chong3" data-text="门店3">门店3</li>
+                                    <li data-value="chong4" data-text="门店4">门店4</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                    <li data-value="chong5" data-text="门店5">门店5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>分公司
+                        <div class="searchBox">
+                            <input type="text" readonly placeholder="点击选择" autocomplete="off" class="form-control" id="appChannelId1" name="appChannelId" value=""/>
+                            <input type="hidden" id="branch"/>
+                            <div class="searchLable" id="searchBox1" >
+                                <input type="" name="" id="channel1" class="search_channel">
+                                <span class="search-icon"></span>
+                                <ul>
+                                    <li data-value="chong11" data-text="分公司1">分公司1</li>
+                                    <li data-value="chong22" data-text="分公司012">分公司012</li>
+                                    <li data-value="chong33" data-text="分公司3">分公司3</li>
+                                    <li data-value="chong44" data-text="分公司4">分公司4</li>
+                                    <li data-value="chong55" data-text="分公司">分公司</li>
+                                    <li data-value="chong56" data-text="分公司5">分公司5</li>
+                                    <li data-value="chong57" data-text="分公司5">分公司5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>日期
+                        <input id="start" class="form-control datetimepicker" autocomplete="off"
+                               type="text" size="20" />
+                        至
+                        <input id="end" class="form-control datetimepicker" autocomplete="off"
+                               type="text" size="20"/></li>
+                    <li> <button id="query">查询</button></li>
+                    <li style="float: right"><a href=""><button class="excel">导出Excel</button></a></li>
+                </ul>
             </div>
             <div class="con-2">
                 <div class="con-table">
@@ -187,10 +230,12 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>
 <script src="static/js/jquery.datetimepicker.js" type="text/javascript"></script>
+<script src="static/js/search-channel.js"></script>
 <script>
     $('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
 </script>
@@ -204,4 +249,11 @@
         todayButton: false,    //关闭选择今天按钮
         validateOnBlur:false   //关闭自动填充
     });
+</script>
+<script>
+    $('#query').click(function () {
+        alert($('#store').val())
+        alert($('#branch').val())
+    })
+
 </script>

@@ -124,16 +124,18 @@
     <div class="container">
         <div class="container-con">
             <div class="con-1">
-                门店
-                <select name="" id="">
-                    <option value="">全部</option>
-                    <option value="">门店001</option>
-                    <option value="">门店001</option>
-                </select>
-                日期
-                <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/>
-                <button>查询</button>
-                <button class="excel">导出Excel</button>
+                <ul>
+                    <li>门店
+                        <select name="" id="">
+                            <option value="">全部</option>
+                            <option value="">门店001</option>
+                            <option value="">门店001</option>
+                        </select></li>
+                    <li>日期
+                        <input class="form-control datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder=""/></li>
+                    <li><button>查询</button></li>
+                    <li style="float: right"><button class="excel">导出Excel</button></li>
+                </ul>
             </div>
             <div class="con-2">
                 <div class="con-table">
@@ -202,6 +204,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>

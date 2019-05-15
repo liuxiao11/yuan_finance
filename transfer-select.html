@@ -125,31 +125,28 @@
         <div class="container-con">
             <form action="" method="post"  id="commentForm">
                 <div class="con-11">
-                    转出账户
-                    <select name="" id="">
-                        <option value="">全部</option>
-                        <option value="">分公司001</option>
-                        <option value="">分公司002</option>
-                        <option value="">分公司003</option>
-                    </select>
-                    转入账户
-                    <select name="" id="">
-                        <option value="">全部</option>
-                        <option value="">门店001</option>
-                        <option value="">门店002</option>
-                        <option value="">门店003</option>
-                    </select>
-                    用途
-                    <select name="" id="">
-                        <option value="">全部</option>
-                        <option value="">分账</option>
-                        <option value="">分账</option>
-                        <option value="">分账</option>
-                    </select>
-                    日期
-                    <input class="datetimepicker" autocomplete="off" style="margin-left: 5px;" type="text" size="20" value="" name="start" placeholder="" /> -
-                    <input class="datetimepicker" autocomplete="off" style="margin-right: 5px;" type="text" size="20" value="" name="end" placeholder=""/>
-                    <input type="submit" class="button" value="查询" id="user-submit">
+                    <ul>
+                        <li>用途
+                        <select name="" id="">
+                            <option value="">全部</option>
+                            <option value="">分账</option>
+                            <option value="">分账</option>
+                            <option value="">分账</option>
+                        </select></li>
+                        <li>状态
+                            <select name="" id="">
+                                <option value="">全部</option>
+                                <option value="">门店001</option>
+                                <option value="">门店002</option>
+                                <option value="">门店003</option>
+                            </select></li>
+                        <li> 申请日期
+                            <input class="datetimepicker" autocomplete="off"  type="text" size="20" value="" name="start" placeholder="" />至
+                            <input class="datetimepicker" autocomplete="off"  type="text" size="20" value="" name="end" placeholder=""/></li>
+                        <li><button id="query">查询</button></li>
+                        <li style="margin-left: 50px"><a href=""><button class="excel">导出Excel</button></a></li>
+                        <li><button id="receipt" class="excel">批量导出凭证</button></li>
+                    </ul>
                 </div>
             </form>
             <div class="con-2">
@@ -255,6 +252,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>

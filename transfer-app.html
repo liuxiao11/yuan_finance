@@ -147,8 +147,10 @@
                                 <option value="">分公司002</option>
                             </select>
                         </p>
-                        <p><span class="pwd">账户余额</span><input type="text" value="10000.00" readonly="readonly"></p>
-                        <p><span class="pwd">转账金额</span><input type="text" placeholder="请输入提现金额（元）" id="wds" class="wds" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([1]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="转账金额必须大于一元且保留两位小数"></p>
+                        <p><span class="pwd">账户余额</span>
+                            <input type="text" value="10000.00" readonly="readonly"></p>
+                        <p><span class="pwd">转账金额</span>
+                            <input type="text" placeholder="请输入提现金额（元）" id="wds" class="wds" data-validation="custom" data-validation-regexp="^(([1-9][0-9]*)|(([1]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$" data-validation-error-msg="转账金额必须大于一元且保留两位小数"></p>
                         <p>
                             <span class="pwd">用途</span>
                             <select name="" id="">
@@ -156,9 +158,9 @@
                                 <option value="">分账</option>
                             </select>
                         </p>
-                        <p><span class="pwd">附言</span><input type="text" placeholder="" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="附言最多50个字"></p>
-                        <input type="submit" class="button" value="提交" id="user-submit">
-
+                        <p><span class="pwd">附言</span>
+                            <input type="text" placeholder="" data-validation="custom" data-validation-regexp="^[\u4e00-\u9fa5\w]{0,50}$" data-validation-error-msg="附言最多50个字"></p>
+                        <button type="submit" class="button" id="user-submit">提交</button>
                     </div>
                 </form>
             </div>
@@ -201,9 +203,8 @@
                             <!--<option value="">7</option>-->
                             <!--</select>-->
                             <div id="pageToolbar"></div>
+                            <button style="margin-bottom: 10px">确认提交</button>
                         </div>
-                        <button style="margin-bottom: 10px">确认提交</button>
-
                 </div>
             </div>
         </div>
@@ -212,6 +213,7 @@
 </body>
 </html>
 <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <script type="text/javascript" src="static/js/query.js"></script>
 <script type="text/javascript" src="static/js/paging.js"></script>
